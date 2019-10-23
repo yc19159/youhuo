@@ -197,7 +197,7 @@ export default {
         //        goodprice: this.detail.normal_price/100
         // }).then(res=>{
         //     this.total+=this.count
-        //      this.$router.push({name:"cart"})    
+             this.$router.push({name:"jiesuan"})    
         // })
           },
           gotocart(){

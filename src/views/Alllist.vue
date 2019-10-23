@@ -5,7 +5,7 @@
          <el-tabs :tab-position="tabPosition" style="height: 200px;">
     <el-tab-pane label="超值套餐">
       <ul class="listUl">
-        <li ><p></p>
+        <li > <router-link  to="good/123"><p></p></router-link>
         <span class="phoneType">苹果</span></li>
 
       <li><p></p>

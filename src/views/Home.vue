@@ -16,10 +16,12 @@
 <div class="bg_banner">
     <div class="banner">
 <van-swipe :autoplay="3000" indicator-color="white">
-  <van-swipe-item>1</van-swipe-item>
+   <router-link  to="list">
+  <van-swipe-item  >1</van-swipe-item>
   <van-swipe-item>2</van-swipe-item>
   <van-swipe-item>3</van-swipe-item>
   <van-swipe-item>4</van-swipe-item>
+   </router-link>
 </van-swipe>
     </div>
     </div>
@@ -100,7 +102,7 @@ export default {
      onSearch(){
           console.log(this.value)
      },
-
+      
   },
   mounted() {
     this.changeSearch(true);
@@ -258,7 +260,7 @@ export default {
   border: 0;
   outline: 0;
   display: block;
-  height: 0.2rem;
+  /* height: 0.2rem; */
   margin-top: 0.2rem;
   line-height: 0.2rem;
   border-radius: 0.06rem;

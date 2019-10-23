@@ -1,0 +1,334 @@
+<template>
+<div class="main">
+    <div class="bg-top">
+        <div class="top">
+      <Head></Head>
+      <div class="wait-pay">
+           <img src="" alt="" class="clock">
+           <p class="wiat-forpay">等待付款</p>
+      </div>
+         <div class="top-third">
+             <span class="needpay">需付款：￥999.00</span>
+              <span class="havetime">剩余时间：XX小时XX分钟</span>
+         </div>
+       </div>  
+       
+    </div>
+    <div class="bg-address">
+        <div class="address">
+            <div class="user-information">
+               <img src="" alt="">
+               <span class="username">小橙子</span>
+               <span class="usetel">13253453329</span>
+            </div>
+           <div class="address-detail">
+               <p>地址：湖北省武汉市江夏区江汉路世纪中心508</p>
+           </div>
+
+           </div>
+       </div>
+           <div class="bg-content">
+         <div class="content">
+             <div class="store">
+                    <img src="" alt="" class="store-img">
+                    <span class="storename">{佳佳手机专营店}</span>
+                     <img src="" alt="" class="more">
+             </div>
+             <div class="goods-desc">
+                      <img src="" alt="">
+                     <div class="goods-right">
+                         <p class="goods-name">Apple Iphone x11(A2322) 128Gb 黑色 移动联通电信4G手机 双卡双待</p>
+                         <div class="goods-model">
+                            <span>{颜色：黑色} </span>
+                            <span>{规格：256GB}</span>
+                            
+                         </div>
+                         <div>
+                         <p class="goods-price" >
+                           ￥<span :style="{'font-size':'0.18rem'}">9.99</span> 
+                         </p>
+                         <p class="goods-number">×200</p>
+                         </div>
+                     </div>
+             </div>
+             <div class="carrier">
+                 <span class="carrier-p">运费</span>
+                 <span class="carrier-arrive">到付</span>
+             </div>
+              <div class="daoqimd">
+                 <span class="carrier-p">到期买断金额</span>
+                 <span class="carrier-arrive">￥{19.00}</span>
+             </div>
+              <div class="yunxian">
+                 <span class="carrier-p">运险费</span>
+                 <span class="carrier-arrive">￥10.00</span>
+             </div>
+              <div class="liuyan">
+                 <span class="carrier-p">订单留言</span>
+                <input type="text" class="dd-liuyan" placeholder="选填，建议请先和商家协商一致"> 
+             </div>
+             <div class="total">
+                  <span class="total-number">共200件 </span>
+                  <span class="xiaoji"> 小计：<span 
+                  :style="{color:'#B3381D'}">￥</span>
+                  <span :style="{color:'#B3381D','font-size':'0.17rem'}">999.00</span> </span>
+             </div>
+         </div>
+     </div>
+     <div class="foot">
+         <button class="cancel">取消订单</button>
+         <button class="tijiao">提交订单</button>
+     </div>
+    </div>
+</template>
+
+<script>
+import {mapState,mapMutations} from "vuex";
+import Head from "@/components/Head.vue";
+
+export default {
+    
+  data(){
+        return{
+            
+        }
+    },
+    components: {
+     Head,
+    },
+    methods: {
+         ...mapMutations(['changeSearch']),
+    },
+    computed: {
+         ...mapState(['searchShow']),
+    },
+    mounted() {
+        
+         this.changeSearch(false);
+    },
+}
+</script>
+
+<style lang="scss"  scoped>
+.main{
+    background: #F5F6FA;
+    width: 100%;
+    height: 7.47rem;
+}
+.head{
+    background:rgba(0,0,0,0);;
+}
+.bg-top{
+    width: 100%;
+    // background: #007BFF;
+    background: -webkit-linear-gradient(to left, #007BFF, #3FE699) ;
+     background: linear-gradient(to left, #007BFF, #3FE699) !important;
+     height: 2.2rem;
+}
+.wait-pay{
+    width: 1.2rem;
+    height: 0.22rem;
+    margin: auto;
+    margin-top: 0.28rem;
+ .clock{
+    width: 0.22rem;
+    height: 0.22rem;
+    background: grey;
+    float: left;
+    }
+    .wiat-forpay{
+        float: left;
+        margin-left: 0.13rem;
+        font-size: 0.19rem;
+        height: 0.2rem;
+        line-height: 0.2rem;
+    }
+}
+.top-third{
+margin-top: 0.34rem;
+font-size: 0.13rem;
+margin-left: 0.43rem;
+.havetime{
+    margin-left: 0.25rem;
+}
+}
+.bg-address{
+   width: 100%;
+   height: 0.9rem;
+   background: white;
+   border-radius: 0.2rem;
+   margin-top: -0.2rem;
+   overflow: hidden;
+   .address{
+       width: 3.43rem;
+       margin: auto;
+       .user-information{
+           margin-top: 0.2rem;
+           height: 0.2rem;
+           img{
+               width: 0.14rem;
+               height: 0.14rem;
+               background: grey;
+               float: left;
+               margin-top: 0.02rem;
+           }
+           .username{
+               font-size: 0.15rem;
+               font-weight: bold;
+               margin-left: 0.14rem;
+               float: left;
+           }
+           .usetel{
+               margin-left: 0.12rem;
+               font-size: 0.12rem;
+               font-weight: bold;
+               float: left;
+           }
+       }
+       .address-detail{
+          margin-top: 0.1rem;
+          p{
+              font-size: 0.13rem;
+              margin-left: 0.19rem;
+              color: #5E6165;
+          }
+       }
+   }
+}
+ .bg-content{
+       height: 4.35rem;
+       width: 100%;
+       background: white;
+       margin-top: 0.12rem;
+       border-radius: 0.2rem;
+       overflow: hidden;
+         margin-bottom: 0.7rem;
+   }
+   .content{
+       width: 3.43rem;
+       height: 4.35rem;
+       margin: auto;
+       overflow: hidden;
+     
+   }
+   .content .goods-desc{
+       width: 100%;
+       height: 0.9rem;
+       margin-top: 0.24rem;
+   }
+   .content .goods-desc img{
+       width: 0.63rem;
+       height: 0.88rem;
+       border: 1px solid;
+       float: left;
+   }
+   .content .goods-desc .goods-right{
+       width: 2.51rem;
+       height: 0.9rem;
+       float: right;
+       margin-left: 0.13rem;
+   }
+   .content .goods-desc .goods-name{
+       font-size: 0.14rem;
+       font-weight: bold;
+       line-height: 0.23rem;
+       margin-top: -0.04rem;
+   }
+   .content .goods-desc .goods-model span{
+       font-size: 0.12rem;
+       color: #C7C7C7;
+       margin-left: 0.3rem;
+   }
+   .content .goods-desc .goods-model span:first-child{
+          margin-left: 0;
+   }
+    .content .goods-desc .goods-right .goods-price{
+        font-size: 0.13rem;
+        font-weight: bold;
+        color: #B3381D;
+        margin-top: 0.06rem;
+        float: left;
+    }
+     .content .goods-desc .goods-right .goods-number{
+            float: right;
+            margin-top: 0.14rem;
+            color: #C7C7C7;
+            font-size: 0.12rem;
+     }
+     .carrier{
+         margin-top: 0.46rem;
+          height: 0.15rem;
+     }
+      .carrier-p{
+         font-size: 0.13rem;
+         font-weight: bold;
+         float: left;
+         line-height: 0.15rem;
+     }
+      .carrier-arrive{
+         font-size: 0.12rem;
+         color: #2F3031;
+         float: right; 
+         line-height: 0.15rem;
+     }
+     .daoqimd , .yunxian , .liuyan{
+          margin-top: 0.3rem;
+          height: 0.26rem;
+     }
+    .liuyan .dd-liuyan{
+         outline: none;
+         border: none;
+         float: left;
+         margin-left: 0.2rem;
+         font-size: 0.14rem;
+         color: black;
+          margin-top: -0.02rem;
+    }
+    .dd-liuyan::-webkit-input-placeholder {
+    color: #C7C7C7;
+    font-size: 0.12rem;
+    }
+    .total{
+        margin-top:  0.16rem;
+    }
+    .total .total-number{
+        margin-left: 1.7rem;
+        color: #C7C7C7;
+        font-size: 0.12rem;
+    }
+    .total .xiaoji{
+        margin-left: 0.05rem;
+        font-size: 0.13rem;
+        font-weight: bold;
+    }
+    .content .store{
+        height: 0.2rem;
+        margin-top: 0.2rem;
+        .store-img{
+            width: 0.15rem;
+            height: 0.15rem;
+            background:grey;
+            float: left; 
+            margin-top: 0.02rem;
+        }
+        .storename{
+            float: left;
+            font-size: 0.13rem;
+
+        }
+    }
+    .foot{
+      width: 100%;
+      height: 0.56rem;
+      background: white;
+      position: fixed;
+      bottom: 0;
+      button{
+          width: 1.35rem;
+          height: 0.4rem;
+          border-radius: 0.2rem;
+          border: none;
+          outline: none;
+      }
+    }
+</style>

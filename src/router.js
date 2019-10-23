@@ -50,6 +50,11 @@ export default new VueRouter({
       component: ()=> import('./views/Jiesuan.vue'),
     },
     {
+      path: '/waitforpay',
+      name: 'waitforpay',
+      component: ()=> import('./views/WaitForPay.vue'),
+    },
+    {
       path: '/addressedit',
       name: 'addressedit',
       component: ()=> import('@/views/Addressedit.vue'),

@@ -18,7 +18,7 @@ export default {
     },
      methods: {
            goback(){
-                this.$router.push({name:'home'})
+                 this.$router.go(-1);
            } ,
            onSearch(){
                 console.log(this.value)

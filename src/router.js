@@ -55,6 +55,21 @@ export default new VueRouter({
       component: ()=> import('./views/WaitForPay.vue'),
     },
     {
+      path: '/paysuccess',
+      name: 'paysuccess',
+      component: ()=> import('./views/PaySuccess.vue'),
+    },
+    {
+      path: '/myorder',
+      name: 'myorder',
+      component: ()=> import('./views/MyOrder.vue'),
+    },
+    {
+      path: '/givewarm',
+      name: 'givewarm',
+      component: ()=> import('./views/GiveWarm.vue'),
+    },
+    {
       path: '/addressedit',
       name: 'addressedit',
       component: ()=> import('@/views/Addressedit.vue'),

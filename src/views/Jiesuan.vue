@@ -86,7 +86,7 @@
                       <span class="wx-text">微信支付</span>
                       <p class="wx-check"></p>
                  </div>
-                 <button class="pay-sure">确认支付</button>
+                 <button class="pay-sure" @click="paySure">确认支付</button>
           </div>
        </div>
     </div>
@@ -118,8 +118,12 @@ export default {
  document.getElementsByClassName('pay')[0].style.display="block";
          },
          close(){
-  document.getElementsByClassName('pay')[0].style.display="none";
+    document.getElementsByClassName('pay')[0].style.display="none";
     this.$router.push({name:"waitforpay"})
+         },
+         paySure(){
+        document.getElementsByClassName('pay')[0].style.display="none";
+        this.$router.push({name:"paysuccess"})
          },
          onEdit(){
         //   addaddress
@@ -355,12 +359,12 @@ export default {
         margin-top:  0.16rem;
     }
     .total .total-number{
-        margin-left: 1.7rem;
+        margin-left: 1.72rem;
         color: #C7C7C7;
         font-size: 0.12rem;
     }
     .total .xiaoji{
-        margin-left: 0.05rem;
+        margin-left: 0.14rem;
         font-size: 0.13rem;
         font-weight: bold;
     }

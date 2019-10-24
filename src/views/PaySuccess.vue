@@ -5,12 +5,9 @@
       <Head></Head>
       <div class="wait-pay">
            <img src="" alt="" class="clock">
-           <p class="wiat-forpay">等待付款</p>
+           <p class="wiat-forpay">付款成功</p>
       </div>
-         <div class="top-third">
-             <span class="needpay">需付款：￥999.00</span>
-              <span class="havetime">剩余时间：XX小时XX分钟</span>
-         </div>
+       
        </div>  
        
     </div>
@@ -65,7 +62,9 @@
              </div>
               <div class="liuyan">
                  <span class="carrier-p">订单留言</span>
-                <input type="text" class="dd-liuyan" placeholder="选填，建议请先和商家协商一致"> 
+                <!-- <input type="text" class="dd-liuyan" placeholder="选填，建议请先和商家协商一致"> 
+                 -->
+                 <span class="dd-liuyan">选填，建议请先和商家协商一致</span>
              </div>
              <div class="total">
                   <span class="total-number">共200件 </span>
@@ -76,8 +75,8 @@
          </div>
      </div>
      <div class="foot">
-         <button class="cancel">取消订单</button>
-         <button class="tijiao">提交订单</button>
+         <button class="cancel">申请退款</button>
+       
      </div>
     </div>
 </template>
@@ -280,9 +279,9 @@ margin-left: 0.43rem;
          border: none;
          float: left;
          margin-left: 0.2rem;
-         font-size: 0.14rem;
-         color: black;
-          margin-top: -0.02rem;
+         font-size: 0.12rem;
+         color:  #C7C7C7;;
+         margin-top: -0.02rem;
     }
     .dd-liuyan::-webkit-input-placeholder {
     color: #C7C7C7;
@@ -292,12 +291,12 @@ margin-left: 0.43rem;
         margin-top:  0.16rem;
     }
     .total .total-number{
-        margin-left: 1.72rem;
+        margin-left: 1.7rem;
         color: #C7C7C7;
         font-size: 0.12rem;
     }
     .total .xiaoji{
-        margin-left: 0.14rem;
+        margin-left: 0.12rem;
         font-size: 0.13rem;
         font-weight: bold;
     }
@@ -314,7 +313,7 @@ margin-left: 0.43rem;
         .storename{
             float: left;
             font-size: 0.13rem;
-            margin-left: 0.1rem;
+             margin-left: 0.1rem;
         }
     }
     .foot{
@@ -333,7 +332,8 @@ margin-left: 0.43rem;
       }
       .cancel{
          background: white;
-          margin-left: 0.58rem;
+         float: right;
+        margin-right: 0.16rem;
         border: 1px solid gray;
       }
       .tijiao{

@@ -14,17 +14,22 @@
             <van-button @click="gotoLogin" type="primary">立即登录</van-button>
             <p class="username">您未登录</p> 
        </div>
+       <Foot/>
   </div>
 </template>
 
 <script>
 import {mapMutations,mapState} from "vuex";
+import Foot from "@/components/Foot.vue"
 export default {
     data(){
         return{
             isLogin:false,
             username:"",
         }
+    },
+    components:{
+     Foot,
     },
     methods: {
         ...mapMutations(['changeSearch']),

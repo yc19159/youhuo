@@ -15,14 +15,15 @@
 </van-search>
 <div class="bg_banner">
     <div class="banner">
+      <router-link  to="list">
 <van-swipe :autoplay="3000" indicator-color="white">
-   <router-link  to="list">
+   
   <van-swipe-item  >1</van-swipe-item>
   <van-swipe-item>2</van-swipe-item>
   <van-swipe-item>3</van-swipe-item>
   <van-swipe-item>4</van-swipe-item>
-   </router-link>
 </van-swipe>
+ </router-link>
     </div>
     </div>
     <div class="mainContent">

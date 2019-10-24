@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
+import VueRouter from 'vue-router';
 import store from './store'
 // import './registerServiceWorker'
 // console.log("vue de main")
@@ -15,6 +16,11 @@ import { Card } from 'vant';
 import { Swipe, SwipeItem } from 'vant';
 import { Notify } from 'vant';
 import { Area } from 'vant';
+const routerPush = VueRouter.prototype.push
+VueRouter.prototype.push = function push(location) {
+  return routerPush.call(this, location).catch(error=> error)
+}
+
 
 Vue.use(Area);
 

@@ -1,26 +1,141 @@
 <template>
-  <div >
-    <Head title="个人中心" :show="true"></Head>
-     <div v-if="isLogin">
-           <Uploadavatar :username="isLogin"/>
-            <!-- <h2>username =={{isLogin}}</h2> -->
-            <Minebody></Minebody>
-           <van-button @click="leave" type="danger" >退出登陆</van-button> 
-           <p class="username">{{username}}</p>  
+  <div class="mine">
+      <div :style="{height:'2.72rem',background:'white',overflow:'hidden'}">
+     <div class="top">
+         <img src="" alt="" class="news">
+         <img src="" alt="" class="setting">
+     </div>
+      <div class="bg-consume">
+               <div class="consume">
+     <div v-if="isLogin" class="login">
+           <!-- <Uploadavatar :username="isLogin"/> -->
+          
+
+           
        </div>
-       <div v-else>
-           <Uploadavatar :username="isLogin"/>
-            <Minebody></Minebody>
-            <van-button @click="gotoLogin" type="primary">立即登录</van-button>
-            <p class="username">您未登录</p> 
+       <div v-else class="unlogin">
+           <!-- <Uploadavatar :username="isLogin"/> -->
+            <p class="newfriend">HI，新朋友</p>
+            <p class="sp">立即登录，享受更多服务</p>
+            <button class="login">登录</button>
+            
        </div>
+       <div class="some-fun">
+           <ul>
+               <li>
+                   <p>0</p>
+                   <p>优惠卷</p>
+               </li>
+               <li>
+                   <p>0</p>
+                   <p>红包</p>
+               </li>
+               <li>
+                   <p>0</p>
+                   <p>余额</p>
+               </li>
+               <li>
+                   <p>0</p>
+                   <p>收藏夹</p>
+               </li>
+           </ul>
+       </div>
+
+       <img src="" alt="" class="vipimg">
+               </div>
+      </div>
+      </div>
+     <div class="bg-myorder">
+           <div class="myorder">
+               <div class="allorder">
+                   <p class="left">
+                       我的订单
+                   </p>
+                    <p class="right">
+                        全部订单
+                    </p>
+                    <img src="" alt="" class="more">
+               </div>
+               <ul>
+                   <li>
+                       <img src="" alt="">
+                       <p>待付款</p>
+                   </li>
+                     <li>
+                       <img src="" alt="">
+                       <p>待发货</p>
+                   </li>
+                     <li>
+                       <img src="" alt="">
+                       <p>待收货</p>
+                   </li>
+                     <li>
+                       <img src="" alt="">
+                       <p>已完成</p>
+                   </li>
+               </ul>
+           </div>
+     </div>
+           <div class="bg-service">
+           <div class="service">
+               <div class="allorder">
+                   <p class="left">
+                       我的订单
+                   </p>
+                    <p class="right">
+                        全部订单
+                    </p>
+                    <img src="" alt="" class="more">
+               </div>
+               <ul>
+                   <li>
+                       <img src="" alt="">
+                       <p>待付款</p>
+                   </li>
+                     <li>
+                       <img src="" alt="">
+                       <p>待发货</p>
+                   </li>
+                     <li>
+                       <img src="" alt="">
+                       <p>待收货</p>
+                   </li>
+                     <li>
+                       <img src="" alt="">
+                       <p>已完成</p>
+                   </li>
+               </ul>
+           </div>
+     </div>
+
+     <div class="tuijian">
+         <img src="" alt="" class="tuijian-img">
+         <p class="recommendForYou">为你推荐</p>
+     </div>
+     <div class="price">
+      <ul class="glist">
+        <li class="glist-item" @click="drawer = true">
+          <img src="" class="glist-img"/>
+          <p class="phont-type">AAAAA Ipone   X</p>
+          <p :style="{color:'#3BAD38','font-size':'0.13rem','line-height':'0.16rem',height:'0.16rem',
+          'margin-left':'0.12rem',border:'1px solid #25A721','border-radius':'0.02rem',width:'0.32rem',
+          'text-align':'center',float:'left','margin-top':'0.05rem'}">全新</p>
+              <p :style="{color:'#FB9F00','font-size':'0.13rem','line-height':'0.16rem',height:'0.16rem',
+          'margin-left':'0.12rem',border:'1px solid #FCAC39','border-radius':'0.02rem',width:'0.44rem',
+          'text-align':'center',float:'left','margin-top':'0.05rem'}">免押金</p>
+          <p class="glist-price">￥9.99/天</p>
+        </li>
+         <li class="glist-item"></li>
+          <li class="glist-item"></li>
+      </ul>
+    </div> 
        <Foot/>
   </div>
 </template>
 
 <script>
 import {mapMutations,mapState} from "vuex";
-import Foot from "@/components/Foot.vue"
+import Foot from "@/components/Foot.vue";
 export default {
     data(){
         return{
@@ -32,7 +147,7 @@ export default {
      Foot,
     },
     methods: {
-        ...mapMutations(['changeSearch']),
+        
         gotoLogin(){
             this.$router.push({name:'login'})
         },
@@ -49,7 +164,6 @@ export default {
         // } 
     },
     mounted() {
-         this.changeSearch(false)
         var username=sessionStorage.username;
         if(username){
             this.isLogin=true;
@@ -63,18 +177,286 @@ export default {
 </script>
 
 <style scoped>
-.span1{
-    margin-left: 0.1rem;
-    line-height: 0.5rem;
+.mine{
+    width: 100%;
+    height: auto;
+    background: #F5F6FA;
+    overflow: hidden;
 }
-.van-button {
-  left: 42%;
+.top{
+    width: 3.43rem;
+    height: 0.22rem;
+    margin: auto;
+    margin-top: 0.2rem;
+    background: white;
 }
-.username{
+.top .news{
+    float: right;
+    width: 0.18rem;
+    height: 0.2rem;
+    background: grey;
+}
+.top .setting{
+    float: right;
+    width: 0.18rem;
+    height: 0.19rem;
+    background: grey;
+    margin-right: 0.45rem;
+}
+.bg-consume{
+    width: 100%;
+    height: 2.2rem;
+    margin-top: 0.15rem;
+    background: white;
+}
+.consume{
+    width: 3.43rem;
+    height: 2.2rem;
+    margin: auto;
+}
+.unlogin{
+    width: 3.43rem;
+    height: 0.75rem;
+    position: relative;
+    
+}
+
+.unlogin .newfriend{
+    font-size: 0.21rem;
+    font-weight: bold;
+}
+.unlogin .sp{
+  font-size: 0.14rem;
+  color: #C7C7C7;
+  margin-top: 0.12rem;
+}
+.unlogin .login{
     position: absolute;
-    top: 1.4rem;
-    left: 28%;
-    color: red;
-    font-size: 0.4rem;
+    right: 0;
+    top: 0.2rem;
+    border: none;
+    outline: none;
+    width: 0.7rem;
+    height: 0.31rem;
+    border-radius: 0.155rem;
+    color: white;
+    font-size: 0.14rem;
+    background: -webkit-linear-gradient(to left, #3FE699, #007BFF) !important;
+    background: -o-linear-gradient(to left, #3FE699, #007BFF) !important;
+    background: -moz-linear-gradient(to left, #3FE699, #007BFF) !important;
+    background: linear-gradient(to left, #3FE699, #007BFF) !important;
 }
+.login{
+     width: 3.43rem;
+    height: 0.75rem;
+    position: relative;
+}
+.consume .some-fun{
+    width: 100%;
+    margin-top: 0.20rem;
+    height: 0.35rem;
+}
+.consume .some-fun ul{
+    height: 0.35rem;
+}
+.consume .some-fun ul li{
+    text-align: center;
+    float: left;
+    width: 25%;
+}
+.consume .some-fun ul li p:first-child{
+    font-size: 0.14rem;
+    font-weight: bold;
+}
+.consume .some-fun ul li p:nth-child(2){
+    font-size: 0.12rem;
+    font-weight: normal;
+    color: #C7C7C7;
+}
+.consume .vipimg{
+    width: 100%;
+    height: 0.6rem;
+    border-radius: 0.12rem;
+    background: grey;
+    margin-top: 0.15rem;
+}
+.bg-myorder{
+    width: 3.43rem;
+    height: 1.2rem;
+    margin: auto;
+    margin-top: 0.24rem;
+    background: white;
+    border-radius: 0.2rem;
+    overflow: hidden;
+}
+.myorder{
+    width: 3.08rem;
+    height: 1.2rem;
+    margin: auto;
+}
+.allorder{
+width: 100%;
+height: 0.18rem;
+margin-top: 0.15rem;
+
+}
+.allorder .left{
+ font-size: 0.15rem;
+ font-weight: bold;
+ float: left;
+}
+.allorder .right{
+ font-size: 0.12rem;
+ margin-left: 2.5rem;
+ width: 0.5rem;
+}
+.allorder .more{
+  float: right;
+  width: 0.08rem;
+  height: 0.12rem;
+  background: grey;
+  margin-top: -0.15rem;
+}
+.bg-myorder .myorder ul{
+width: 3.43rem;
+height: 0.55rem;
+margin: auto;
+margin-top: 0.2rem;
+}
+
+.bg-myorder .myorder ul li{
+  width: 25%;
+  float: left;
+  text-align: center;
+  font-size: 0.12rem;
+  color: #5E6165;
+  margin-left: 0;
+  height: 0.55rem;
+}
+
+.myorder ul li img{
+    width: 0.2rem;
+    height: 0.22rem;
+    background: grey;
+    margin-left: 0.26rem;
+}
+.myorder ul li p{
+    width: 0.73rem;
+    margin-top: 0.13rem;
+}
+.bg-service{
+    width: 3.43rem;
+    height: 1.2rem;
+    margin: auto;
+    margin-top: 0.24rem;
+    background: white;
+    border-radius: 0.2rem;
+    overflow: hidden;
+}
+.service{
+    width: 3.08rem;
+    height: 1.2rem;
+    margin: auto;
+}
+.bg-service .service ul{
+width: 3.43rem;
+height: 0.55rem;
+margin: auto;
+margin-top: 0.2rem;
+}
+
+.bg-service .service ul li{
+  width: 25%;
+  float: left;
+  text-align: center;
+  font-size: 0.12rem;
+  color: #5E6165;
+  margin-left: 0;
+  height: 0.55rem;
+}
+
+.service ul li img{
+    width: 0.2rem;
+    height: 0.22rem;
+    background: grey;
+    margin-left: 0.26rem;
+}
+.service ul li p{
+    width: 0.73rem;
+    margin-top: 0.13rem;
+}
+.tuijian{
+    width: 0.8rem;
+    height: 0.2rem;
+    margin-left: 1.5rem;
+    margin-top: 0.22rem;
+}
+.tuijian .tuijian-img{
+    width: 0.15rem;
+    height: 0.16rem;
+    background: grey;
+    float: left;
+}
+.tuijian .recommendForYou{
+    font-weight: bold;
+    font-size: 0.15rem;
+    float: left;
+    margin-left: 0.05rem;
+}
+ .price{
+    width: 100%;
+    background: #F5F6FA;
+    border-radius: 0.2rem;
+    margin-top: 0.15rem;
+    margin-bottom: 1rem;
+  }
+  .glist{
+    width: 3.43rem;
+    margin: auto;
+    height: 100%;
+  }
+  .glist::after, .clear::after{
+    content:" .";
+    display:block;
+    clear:both;
+    height:0; 
+    overflow:hidden; visibility:hidden; 
+  }
+  .glist .glist-item{
+     width: 1.6rem;
+     height: 2.53rem;
+     background: white;
+     border-radius: 0.16rem;
+     float: left;
+     margin-top: 0.25rem;
+     /* margin-bottom: 0.2rem; */
+     overflow: hidden;
+  }
+  .glist .glist-item:nth-child(2n){
+    margin-left: 0.23rem;
+  }
+  .glist-img{
+       border: 1px solid;
+       /* display: block; */
+       width: 0.9rem;
+       height: 1.2rem;
+       margin: auto;
+        margin-top: 0.22rem;
+  }
+ .phont-type{
+   margin-left: 0.12rem;
+   margin-top: 0.25rem;
+   font-size: 0.14rem;
+   font-family: "PingFangSC-Semibold";
+   font-weight: bold;
+ }
+ .glist-price{
+    margin-top: 0.28rem;
+    font-size: 0.15rem;
+    font-family: 'DIN-Bold';
+    color: #B3381D;
+    font-weight: bold;
+    margin-left: 0.12rem;
+
+ }
 </style>

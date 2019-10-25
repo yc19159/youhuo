@@ -70,6 +70,11 @@ export default new VueRouter({
       component: ()=> import('./views/GiveWarm.vue'),
     },
     {
+      path: '/givewarmdetail',
+      name: 'givewarmdetail',
+      component: ()=> import('./views/GiveWarmDetail.vue'),
+    },
+    {
       path: '/addressedit',
       name: 'addressedit',
       component: ()=> import('@/views/Addressedit.vue'),

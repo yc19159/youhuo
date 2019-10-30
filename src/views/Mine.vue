@@ -8,8 +8,13 @@
       <div class="bg-consume">
                <div class="consume">
      <div v-if="isLogin" class="login">
-           <!-- <Uploadavatar :username="isLogin"/> -->
-          
+           <Uploadavatar :username="isLogin"/>
+          <!-- <img src="" alt="" class="userImg" > -->
+          <div class="login-right">
+                <p class="userName">大魔王的小怪兽</p>
+                <img src="" class="clubber" alt="">
+                <img src="" class="more" alt="">
+          </div>
 
            
        </div>
@@ -136,15 +141,17 @@
 <script>
 import {mapMutations,mapState} from "vuex";
 import Foot from "@/components/Foot.vue";
+import Uploadavatar from "@/components/Uploadavatar.vue";
 export default {
     data(){
         return{
-            isLogin:false,
+            isLogin:true,
             username:"",
         }
     },
     components:{
      Foot,
+     Uploadavatar,
     },
     methods: {
         
@@ -216,7 +223,7 @@ export default {
 }
 .unlogin{
     width: 3.43rem;
-    height: 0.75rem;
+    height: 0.8rem;
     position: relative;
     
 }
@@ -248,7 +255,7 @@ export default {
 }
 .login{
      width: 3.43rem;
-    height: 0.75rem;
+    height: 0.8rem;
     position: relative;
 }
 .consume .some-fun{
@@ -458,5 +465,36 @@ margin-top: 0.2rem;
     font-weight: bold;
     margin-left: 0.12rem;
 
+ }
+ .login .userImg{
+     float: left;
+     width: 0.8rem;
+     height: 0.8rem;
+     border-radius: 50%;
+     background: grey;
+ }
+ .login .login-right{
+     float: left;
+     margin-left: 0.15rem;
+     width: 2.47rem;
+    
+ }
+ .login .login-right .userName{
+     font-size: 0.23rem;
+     font-weight: 610;
+     margin-top: 0.15rem;
+ }
+ .login .login-right .clubber{
+  width: 0.8rem;
+  height: 0.2rem;
+  background: grey;
+  margin-top: 0.15rem;
+ }
+ .login .login-right .more{
+     width: 0.08rem;
+     height: 0.12rem;
+     float: right;
+     background: grey;
+     margin-top: -0.3rem;
  }
 </style>

@@ -4,7 +4,7 @@ import axios from "axios";
 
 let AUTH_TOKEN = "";
 
-axios.defaults.baseURL = "http://182.92.4.245:1906/"; // 基路径   
+// axios.defaults.baseURL = "http://182.92.4.245"; // 基路径   
 axios.defaults.headers.common['token'] = AUTH_TOKEN;    // token 
 // axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
 

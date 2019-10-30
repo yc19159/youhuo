@@ -24,6 +24,11 @@ export default new VueRouter({
       component: ()=> import('./views/Login.vue')
     },
     {
+      path: '/register',
+      name: 'register',
+      component: ()=> import('./views/Register.vue')
+    },
+    {
       path: '/mine',
       name: 'mine',
       component: ()=> import('./views/Mine.vue')
@@ -39,11 +44,11 @@ export default new VueRouter({
       name: 'good',
       component: ()=> import('./views/Good.vue')
     },
-    // {
-    //   path: '/cart',
-    //   name: 'cart',
-    //   component: ()=> import('./views/Cart.vue')
-    // },
+    {
+      path: '/postal',
+      name: 'postal',
+      component: ()=> import('./views/Postal.vue')
+    },
     {
       path: '/jiesuan',
       name: 'jiesuan',
@@ -74,15 +79,39 @@ export default new VueRouter({
       name: 'givewarmdetail',
       component: ()=> import('./views/GiveWarmDetail.vue'),
     },
-    {
-      path: '/addressedit',
-      name: 'addressedit',
-      component: ()=> import('@/views/Addressedit.vue'),
-    },
     // {
-    //   path: '/addaddress',
-    //   name: 'addaddress',
-    //   component: ()=> import('@/views/Addaddress.vue'),
-    // }
+    //   path: '/addressedit',
+    //   name: 'addressedit',
+    //   component: ()=> import('@/views/Addressedit.vue'),
+    // },
+    {
+     path: '/personaldata',
+      name: 'personaldata',
+      component: ()=> import('@/views/PersonalData.vue'),
+    },
+    {
+      path: '/setting',
+      name: 'setting',
+      component: ()=>import('@/views/Setting'),
+    },
+    {
+      path: '/resetpwd',
+      name: 'resetpwd',
+      component: ()=>import('@/views/ResetPwd'),
+    },{
+      path: '/suggested',
+      name: 'suggested',
+      component: ()=>import('@/views/Suggested')
+    },
+    {
+      path: '/addaddress',
+      name: 'addaddress',
+      component: ()=> import('@/views/Addaddress.vue'),
+    },
+    {
+      path: '/vipmember',
+      name: 'vipmember',
+      component: ()=> import('@/views/VipMember.vue'),
+    },
   ]
 })

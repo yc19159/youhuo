@@ -1,7 +1,7 @@
 <template>
     <div class="head">
        <div class="goback" @click="goback">
-          
+          <img src="../assets/image/goback.png" alt="">
         </div> 
          <van-search placeholder="请输入搜索关键词" @change="onSearch" v-model="value" v-if="searchShow"/>
     </div>
@@ -38,10 +38,13 @@ export default {
     .goback{
         width: 0.2rem;
         height: 0.2rem;
-        border: 1px solid;
         margin-left: 0.16rem;
         float: left;
          margin-top: 0.16rem;  
+    }
+    .goback img{
+         width: 0.2rem;
+        height: 0.2rem;
     }
      .van-search {
          width: 3rem;

@@ -1,27 +1,62 @@
 <template>
   <div class="search">
        <Head></Head>
+       <!-- <input type="text" class=" searchInput" > -->
        <van-tabs v-model="active">
   <van-tab title="价格">
     <div class="price">
       <ul class="glist">
-        <li class="glist-item" @click="drawer = true">
-          <img src="" class="glist-img"/>
-          <p class="phont-type">AAAAA Ipone   X</p>
-          <p :style="{color:'#3BAD38','font-size':'0.13rem','line-height':'0.16rem',height:'0.16rem',
-          'margin-left':'0.12rem',border:'1px solid #25A721','border-radius':'0.02rem',width:'0.32rem',
-          'text-align':'center',float:'left','margin-top':'0.05rem'}">全新</p>
-              <p :style="{color:'#FB9F00','font-size':'0.13rem','line-height':'0.16rem',height:'0.16rem',
-          'margin-left':'0.12rem',border:'1px solid #FCAC39','border-radius':'0.02rem',width:'0.44rem',
-          'text-align':'center',float:'left','margin-top':'0.05rem'}">免押金</p>
-          <p class="glist-price">￥9.99/天</p>
+       <li class="glist-item" @click="drawer = true">
+          <img src="../assets/image/a.png" class="glist-img"/>
+          <p class="phont-type">S 01</p>
+           <span class="glist-price"><span :style="{'font-size':'0.14rem','font-weight':'normal'}">￥</span> 9.99 <span :style="{'font-size':'0.14rem','font-weight':'normal'}">/天</span></span> 
+          <span :style="{color:'grey','font-size':'0.13rem','margin-left':'0.03rem'}">销量：298</span>
+          <p :style="{'font-size':'0.13rem','line-height':'0.16rem',height:'0.16rem',
+          'margin-left':'0.12rem','border-radius':'0.02rem',width:'0.32rem',
+          'text-align':'center',float:'left','margin-top':'0.1rem'}" class="new">全新</p>
+              <p :style="{color:'#269CF0','font-size':'0.13rem','line-height':'0.16rem',height:'0.16rem',
+          'margin-left':'0.12rem',border:'1px solid #269CF0','border-radius':'0.02rem',width:'0.44rem',
+          'text-align':'center',float:'left','margin-top':'0.1rem'}">免押金</p>
+          <p :style="{color:'#FB9F00','font-size':'0.13rem','line-height':'0.16rem',height:'0.16rem',
+          'margin-left':'0.12rem',border:'1px solid #FCAC39','border-radius':'0.02rem',width:'0.2rem',
+          'text-align':'center',float:'left','margin-top':'0.1rem'}">赠</p> <br/>
+          <span class="pay">万人已付款</span> <span class="haoping">99%好评</span>
+          <p class="shop">荣耀京东自营旗舰店</p>
+          <p class="toshop">进店</p>
+          <img src="" alt="" class="more">
+
         </li>
-         <li class="glist-item"></li>
-          <li class="glist-item"></li>
+         <li class="glist-item">
+           
+
+         </li>
+          <li class="glist-item">
+            
+
+          </li>
+          <li class="glist-item">
+            
+
+          </li>
       </ul>
     </div> 
     </van-tab>
-  <van-tab title="销量 ">内容 2</van-tab>
+  <van-tab title="销量 ">  <div class="price">
+      <ul class="glist">
+        <li class="glist-item" @click="drawer = true">
+          
+        </li>
+         <li class="glist-item">
+          
+         </li>
+          <li class="glist-item">
+           
+          </li>
+          <li class="glist-item">
+           
+          </li>
+      </ul>
+    </div> </van-tab>
   <van-tab title="筛选">内容 3</van-tab>
  
 </van-tabs>
@@ -145,6 +180,16 @@ export default {
 </script>
 
 <style  scoped>
+.searchInput{
+  width: 3.02rem;
+  height: 0.32rem;
+  border: none;
+  outline: none;
+  background:#F5F6FA;
+  border-radius: 0.16rem;
+  margin-left: 0.38rem;
+  margin-top: 0.1rem;
+}
 .van-tabs /deep/ .van-tabs__line {
     position: absolute;
     width: 0.2rem !important;
@@ -159,6 +204,10 @@ export default {
     background: -moz-linear-gradient(to left, #3FE699, #007BFF) !important;
     background: linear-gradient(to left, #3FE699, #007BFF) !important;
 }
+.van-tabs /deep/ .van-tabs__wrap{
+   margin-left: 0;
+   width: 100%;
+}
   .price{
     width: 100%;
     background: #F5F6FA;
@@ -166,7 +215,7 @@ export default {
     margin-top: 0.15rem;
   }
   .glist{
-    width: 3.43rem;
+    width: 100%;
     margin: auto;
     height: 100%;
   }
@@ -178,8 +227,8 @@ export default {
     overflow:hidden; visibility:hidden; 
   }
   .glist .glist-item{
-     width: 1.6rem;
-     height: 2.53rem;
+     width: 1.825rem;
+     height: 3.53rem;
      background: white;
      border-radius: 0.16rem;
      float: left;
@@ -188,15 +237,56 @@ export default {
      overflow: hidden;
   }
   .glist .glist-item:nth-child(2n){
-    margin-left: 0.23rem;
+    margin-left: 0.1rem;
+  }
+  .glist .glist-item .new{
+    color: white;
+    background: -webkit-linear-gradient(to left, #F06726, #D6242C) !important;
+    background: -o-linear-gradient(to left, #F06726, #D6242C) !important;
+    background: -moz-linear-gradient(to left, #F06726, #D6242C) !important;
+    background: linear-gradient(to left, #F06726, #D6242C) !important;
+  }
+  .glist .glist-item .pay{
+    float: left;
+    font-size: 0.12rem;
+    color: #C7C7C7;
+    line-height: 0.3rem;
+    margin-left: 0.16rem;
+  }
+  .glist .glist-item .shop{
+    float: left;
+    font-size: 0.12rem;
+    color: #C7C7C7;
+    margin-left: 0.16rem;
+    width: 0.9rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .glist .glist-item .toshop{
+    font-size: 0.12rem;
+    font-weight: bold;
+    float: left;
+  }
+  .glist .glist-item .more{
+    width: 0.08rem;
+    height: 0.12rem;
+    background: grey;
+  }
+  .glist .glist-item .haoping{
+    float: left;
+    font-size: 0.12rem;
+    color: #C7C7C7;
+    line-height: 0.3rem;
+    margin-left: 0.1rem;
   }
   .glist-img{
-       border: 1px solid;
+       /* border: 1px solid; */
        /* display: block; */
-       width: 0.9rem;
-       height: 1.2rem;
+       width: 1.3rem;
+       height: 1.7rem;
        margin: auto;
-        margin-top: 0.22rem;
+       margin-top: 0.17rem;
   }
  .phont-type{
    margin-left: 0.12rem;
@@ -204,11 +294,11 @@ export default {
    font-size: 0.14rem;
    font-family: "PingFangSC-Semibold";
    font-weight: bold;
+  
  }
  .glist-price{
     margin-top: 0.28rem;
-    font-size: 0.15rem;
-    font-family: 'DIN-Bold';
+    font-size: 0.18rem;
     color: #B3381D;
     font-weight: bold;
     margin-left: 0.12rem;

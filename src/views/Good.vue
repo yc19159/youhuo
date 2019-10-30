@@ -228,7 +228,7 @@ export default {
  document.getElementsByClassName('goods-right-picker')[0].style.display="none"; 
       }
        };
-        this.$axios.get('/vue/getallGoods',{
+        this.$axios.get('http://182.92.4.245:1906/vue/getallGoods',{
         params:{goodId:this.$route.params.goodId,}
         }).then(res=>{
         this.detail=res.data.result;

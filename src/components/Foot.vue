@@ -28,15 +28,17 @@
     </div>
 </template>
 <script>
+import {mapState,mapMutations} from 'vuex'
+
 export default {
+
   data(){
     return{
-     list:[
-        {img:"",content:"首页",isActive:true,luyou:'/'},
-        {img:"",content:"送温暖",isActive:false,luyou:'givewarm'},
-        {img:"",content:"我的",isActive:false,luyou:'mine'},
-     ],
+    
     }
+  },
+  computed: {
+      ...mapState(['list'])
   },
   methods: {  
      changeActive(index){  

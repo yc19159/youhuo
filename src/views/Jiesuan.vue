@@ -8,11 +8,11 @@
         <span class="sp1">默认</span>
         <span class="sp2">湖北省武汉市江汉区</span>
     </div>
-    <div class="address-d">
-        <p class="address-detail">湖北省武汉市江汉区世纪中心508</p>
+    <div class="address-d" @click="gotoAddaddress">
+        <p class="address-detail">请编辑地址</p>
         <span class="more">></span>
     </div>
-    <span class="username">小橙子</span>
+    <span class="username">小橙子</span> 
     <span class="usertel">18834568888</span>
 </div>
  </div>
@@ -114,6 +114,9 @@ export default {
    },
      methods: {
          ...mapMutations(['changeSearch']),
+         gotoAddaddress(){
+             this.$router.push({name:"addaddress"})
+         },
          submit(){
  document.getElementsByClassName('pay')[0].style.display="block";
          },

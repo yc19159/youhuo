@@ -3828,10 +3828,12 @@ export default {
   mounted(){
     this.changeSearch(false);
     function unshow() {
-        var postal=document.getElementsByClassName('van-cell')[5];
+        var postal=document.getElementsByClassName('van-cell')[6];
+        var moren=document.getElementsByClassName('van-cell')[7];
         var cancel=document.getElementsByClassName('van-picker__cancel')[0];
         var confirm=document.getElementsByClassName('van-picker__confirm')[0];
             postal.style.display="none";
+             moren.style.display="none";
             cancel.style.backgroundColor='white';
              cancel.style.border='white';
               confirm.style.backgroundColor='white';
@@ -3882,10 +3884,10 @@ button{
 }
  .van-address-edit /deep/.van-button{
 
-     background: -webkit-linear-gradient(to left, #3FE699, #007BFF) !important;
-    background: -o-linear-gradient(to left, #3FE699, #007BFF) !important;
-    background: -moz-linear-gradient(to left, #3FE699, #007BFF) !important;
-    background: linear-gradient(to left, #3FE699, #007BFF) !important; 
+    background: -webkit-linear-gradient(to left, #D50000, #FD9A28) !important;
+    background: -o-linear-gradient(to left, #D50000, #FD9A28) !important;
+    background: -moz-linear-gradient(to left, #D50000, #FD9A28) !important;
+    background: linear-gradient(to left, #D50000, #FD9A28) !important;
     border: none;
     border-radius: 0.22rem;
 }

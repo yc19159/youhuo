@@ -48,8 +48,7 @@ export default {
            pwd: "",
            dbpwd: "",
            num: 60,
-           codeFlag: false,
-        
+           codeFlag: false, 
        }
    },
    components: {
@@ -139,7 +138,6 @@ export default {
      
                        if(pwd==dbpwd){
                            var checkInput=document.getElementById('check');
-                           console.log(checkInput)
                            if(document.getElementById('check').checked){
               this.$axios.post("http://192.168.0.14:8080/wx/auth/register",{
                   "username":this.username,

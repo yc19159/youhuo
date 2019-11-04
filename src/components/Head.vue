@@ -1,10 +1,17 @@
 <template>
+
     <div class="head">
+       
        <div class="goback" @click="goback">
+         
           <img src="../assets/image/goback.png" alt="">
+          
         </div> 
+          <router-link :to="{name:'search'}">
          <van-search placeholder="请输入搜索关键词" @change="onSearch" v-model="value" v-if="searchShow"/>
+         </router-link>
     </div>
+    
 </template>
 
 <script>

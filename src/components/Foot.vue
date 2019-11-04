@@ -15,12 +15,13 @@
                 <li class="footerBarLi">
                     <img src="" alt="">
                     <span>我的</span></li> -->
-            <li :class="{'footerBarli':!item.isActive,'active':item.isActive }"  @click='changeActive(index)' v-for="(item,index) in list" :key="index">
+            <li :class="{'footerBarli':!item.isActive,'active':item.isActive }"  
+            @click='changeActive(index)' v-for="(item,index) in list" :key="index">
       
      <img src="" alt="">
-<span>{{item.content}}</span>
+  <span>{{item.content}}</span>
 
-</li>
+   </li>
 
             </ul>
         </div>
@@ -97,10 +98,10 @@ export default {
 .footerBar .active{
     border: 0;
     border-radius: 0.16rem;
-    background: -webkit-linear-gradient(to left, #3FE699, #007BFF) !important;
-    background: -o-linear-gradient(to left, #3FE699, #007BFF) !important;
-    background: -moz-linear-gradient(to left, #3FE699, #007BFF) !important;
-    background: linear-gradient(to left, #3FE699, #007BFF) !important;
+    background: -webkit-linear-gradient(to left, #D50000, #FD9A28) !important;
+    background: -o-linear-gradient(to left, #D50000, #FD9A28) !important;
+    background: -moz-linear-gradient(to left, #D50000, #FD9A28) !important;
+    background: linear-gradient(to left, #D50000, #FD9A28) !important;
 }
 .footerBar ul li img{
  margin-top: 0.08rem;

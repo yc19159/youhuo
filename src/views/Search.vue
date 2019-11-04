@@ -23,7 +23,7 @@
           <span class="pay">万人已付款</span> <span class="haoping">99%好评</span>
           <p class="shop">荣耀京东自营旗舰店</p>
           <p class="toshop">进店</p>
-          <img src="" alt="" class="more">
+          <img src="../assets/image/more.png" alt="" class="more">
 
         </li>
          <li class="glist-item">
@@ -76,23 +76,27 @@
                <p class="m-price">最高价</p>
         </div>
       </div>
-       <div class="yajin ">
-        <span class="strong-t">押金</span>
-        <span class="normal-c">(元/天)</span>
-        <div class="between-price ">
-              <p class="l-price">最低价</p>
-              <p class="crossing"></p>
-               <p class="m-price">最高价</p>
-        </div>
-      </div>
         <div class="days ">
         <span class="strong-t">租用天数</span>
         <span class="normal-c">(元/天)</span>
         <div class="between-price ">
               <p class="small-day">半年</p>
               <p class="middle-day">一年</p>
-               <p class="large-day">两年</p>
+              <p class="large-day">两年</p>
         </div>
+      </div>
+
+       <div class="sendfrom">
+        <span class="strong-t">发货地</span>
+        <span class="normal-c">(元/天)</span>
+        <div class="between-price ">
+              <p class="l-price">上海</p>
+               <p class="m-price">武汉</p>
+        </div>
+      </div>
+      <div class="makesure">
+        <button class="reset">重置</button>
+        <button class="sure">确定</button>
       </div>
   </div>
 </el-drawer>
@@ -269,9 +273,12 @@ export default {
     float: left;
   }
   .glist .glist-item .more{
-    width: 0.08rem;
-    height: 0.12rem;
-    background: grey;
+    /* width: 0.08rem;
+    height: 0.12rem; */
+
+    float: left;
+    margin-left: 0.05rem;
+    margin-top: 0.05rem;
   }
   .glist .glist-item .haoping{
     float: left;
@@ -362,10 +369,32 @@ export default {
    height: 0.6rem;
    width: 2.7rem;
  }
- .yajin{
+ .sendfrom{
    margin-top: 0.48rem;
    height: 0.6rem;
    width: 2.7rem;
+ }
+ .makesure{
+   width: 2.7rem;
+   height: 0.38rem;
+   margin-top: 60%;
+ }
+ .makesure .reset{
+   border: none;
+   width: 1.2rem;
+   height: 0.38rem;
+   border-radius: 0.19rem;
+ }
+ .makesure .sure{
+   border: none;
+   margin-left: 0.3rem;
+    width: 1.2rem;
+    height: 0.38rem;
+    border-radius: 0.19rem;
+    background: -webkit-linear-gradient(to left, #D50000,#FD9A28) !important;
+    background: -o-linear-gradient(to left, #D50000,#FD9A28) !important;
+    background: -moz-linear-gradient(to left, #D50000,#FD9A28) !important;
+    background: linear-gradient(to left, #D50000,#FD9A28) !important;
  }
  .days{
    margin-top: 0.48rem;

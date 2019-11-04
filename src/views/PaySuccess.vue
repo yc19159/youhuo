@@ -4,8 +4,9 @@
         <div class="top">
       <Head></Head>
       <div class="wait-pay">
-           <img src="" alt="" class="clock">
+           <img src="../assets/image/paysucc_success.png" alt="" class="clock">
            <p class="wiat-forpay">付款成功</p>
+           <p class="onTime">我们将在约定时间发货</p>
       </div>
        
        </div>  
@@ -14,22 +15,22 @@
     <div class="bg-address">
         <div class="address">
             <div class="user-information">
-               <img src="" alt="">
+               <img src="../assets/image/jiesuan_dingwei.png" alt="">
                <span class="username">小橙子</span>
                <span class="usetel">13253453329</span>
             </div>
            <div class="address-detail">
                <p>地址：湖北省武汉市江夏区江汉路世纪中心508</p>
            </div>
-
+                <span class="sp1">收货不便时，可免费选择暂存服务</span>
            </div>
        </div>
            <div class="bg-content">
          <div class="content">
              <div class="store">
-                    <img src="" alt="" class="store-img">
+                    <img src="../assets/image/dianpu.png" alt="" class="store-img">
                     <span class="storename">{佳佳手机专营店}</span>
-                     <img src="" alt="" class="more">
+                     <img src="../assets/image/more.png" alt="" class="more">
              </div>
              <div class="goods-desc">
                       <img src="" alt="">
@@ -49,19 +50,21 @@
                      </div>
              </div>
              <div class="carrier">
-                 <span class="carrier-p">运费</span>
+                  <span class="carrier-p">运费</span>
                  <span class="carrier-arrive">到付</span>
              </div>
               <div class="daoqimd">
-                 <span class="carrier-p">到期买断金额</span>
+                 <span class="carrier-p maiduan">到期买断金额</span>
                  <span class="carrier-arrive">￥{19.00}</span>
              </div>
               <div class="yunxian">
-                 <span class="carrier-p">运险费</span>
+                 <span class="carrier-p sp3">运险费</span>
+                 <span class="return">退换货可赔付</span>
+                 <img src="../assets/image/jiesuan_choose.png" alt="" class="chooseImg"> 
                  <span class="carrier-arrive">￥10.00</span>
              </div>
               <div class="liuyan">
-                 <span class="carrier-p">订单留言</span>
+                 <span class="carrier-p sp4">订单留言</span>
                 <!-- <input type="text" class="dd-liuyan" placeholder="选填，建议请先和商家协商一致"> 
                  -->
                  <span class="dd-liuyan">选填，建议请先和商家协商一致</span>
@@ -112,35 +115,39 @@ export default {
 .main{
     background: #F5F6FA;
     width: 100%;
-    height: 7.47rem;
+    height: 7.57rem;
 }
 .head{
     background:rgba(0,0,0,0);;
 }
 .bg-top{
     width: 100%;
-    // background: #007BFF;
-    background: -webkit-linear-gradient(to left, #007BFF, #3FE699) ;
-     background: linear-gradient(to left, #007BFF, #3FE699) !important;
-     height: 2.2rem;
+    background: url("../assets/image/wait_bg.png") 0 0 no-repeat;
+    background-size: 100% 100%;
+    height: 2.2rem;
+    color: white;
 }
 .wait-pay{
     width: 1.2rem;
     height: 0.22rem;
     margin: auto;
-    margin-top: 0.28rem;
+    margin-top: 0.22rem;
  .clock{
-    width: 0.22rem;
-    height: 0.22rem;
-    background: grey;
-    float: left;
+    width: 0.37rem;
+    height: 0.37rem;
+    margin-left: 30%;
     }
     .wiat-forpay{
-        float: left;
         margin-left: 0.13rem;
         font-size: 0.19rem;
         height: 0.2rem;
         line-height: 0.2rem;
+        margin-top: 0.1rem;
+    }
+    .onTime{
+        font-size: 0.12rem;
+        margin-top: 0.05rem;
+        width: 1.4rem;
     }
 }
 .top-third{
@@ -153,7 +160,7 @@ margin-left: 0.43rem;
 }
 .bg-address{
    width: 100%;
-   height: 0.9rem;
+   height: 1.09rem;
    background: white;
    border-radius: 0.2rem;
    margin-top: -0.2rem;
@@ -164,31 +171,32 @@ margin-left: 0.43rem;
        .user-information{
            margin-top: 0.2rem;
            height: 0.2rem;
-           img{
-               width: 0.14rem;
-               height: 0.14rem;
-               background: grey;
+            img{
+               width: 0.2rem;
+               height: 0.22rem;
                float: left;
-               margin-top: 0.02rem;
+               margin-top: 0.23rem;
            }
            .username{
-               font-size: 0.15rem;
+               font-size: 0.16rem;
                font-weight: bold;
-               margin-left: 0.14rem;
+               margin-left: 0.2rem;
                float: left;
            }
            .usetel{
                margin-left: 0.12rem;
                font-size: 0.12rem;
-               font-weight: bold;
+               color: #5E6165;
                float: left;
+               line-height: 0.22rem;
            }
        }
        .address-detail{
-          margin-top: 0.1rem;
+           margin-top: 0.02rem;
+          margin-left: 0.1rem;
           p{
               font-size: 0.13rem;
-              margin-left: 0.19rem;
+              margin-left: 0.28rem;
               color: #5E6165;
           }
        }
@@ -263,6 +271,27 @@ margin-left: 0.43rem;
          font-weight: bold;
          float: left;
          line-height: 0.15rem;
+         margin-left: 0.5rem;
+     }
+     .maiduan{
+         margin-left: 0rem;
+     }
+     .sp3{
+          margin-left: 0.4rem;
+     }
+     .sp4{
+         margin-left: 0.29rem;
+     }
+     .yunxian .return{
+      font-size: 0.12rem;
+      margin-left: 0.12rem;
+      color: #C7C7C7;
+      margin-top: 0;
+      float: left;
+     }
+     .yunxian .chooseImg{
+         float: right;
+         margin-left: 0.08rem;
      }
       .carrier-arrive{
          font-size: 0.12rem;
@@ -306,7 +335,6 @@ margin-left: 0.43rem;
         .store-img{
             width: 0.15rem;
             height: 0.15rem;
-            background:grey;
             float: left; 
             margin-top: 0.02rem;
         }
@@ -314,6 +342,11 @@ margin-left: 0.43rem;
             float: left;
             font-size: 0.13rem;
              margin-left: 0.1rem;
+        }
+        .more{
+            float: left;
+            margin-top: 0.05rem;
+            margin-left: 0.08rem;
         }
     }
     .foot{
@@ -335,13 +368,21 @@ margin-left: 0.43rem;
          float: right;
         margin-right: 0.16rem;
         border: 1px solid gray;
+         background: -webkit-linear-gradient(to left, #D50000, #FD9A28) !important;
+        background: -o-linear-gradient(to left, #D50000, #FD9A28) !important;
+        background: -moz-linear-gradient(to left, #D50000, #FD9A28) !important;
+        background: linear-gradient(to left, #D50000, #FD9A28) !important;
+        border: none;
       }
-      .tijiao{
-          background: -webkit-linear-gradient(to left, #007BFF, #3FE699) !important;
-         background: -o-linear-gradient(to left, #007BFF, #3FE699) !important;
-         background: -moz-linear-gradient(to left, #007BFF, #3FE699) !important;
-         background: linear-gradient(to left, #007BFF, #3FE699) !important;
-         margin-left: 0.3rem;
-      }
+     
     }
+    .sp1{
+      color: #FD9828;
+      font-size: 0.12rem;
+      margin-top: 0.2rem;
+      float: left;
+      margin-top: 0;
+      margin-left: 0.18rem;
+      margin-top: 0.03rem;
+  }
 </style>

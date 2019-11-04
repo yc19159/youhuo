@@ -113,10 +113,10 @@ export default {
   line-height: 0.44rem;
   text-align: center;
   margin-top: 1.1rem;
-  background: -webkit-linear-gradient(to left, #3FE699, #007BFF) !important;
-  background: -o-linear-gradient(to left, #3FE699, #007BFF) !important;
-  background: -moz-linear-gradient(to left, #3FE699, #007BFF) !important;
-  background: linear-gradient(to left, #3FE699, #007BFF) !important;
+  background: -webkit-linear-gradient(to left, #D50000, #FD9A28) !important;
+    background: -o-linear-gradient(to left, #D50000, #FD9A28) !important;
+    background: -moz-linear-gradient(to left, #D50000, #FD9A28) !important;
+    background: linear-gradient(to left, #D50000, #FD9A28) !important;
   border: 0;
   outline: 0;
   border-radius: 0.22rem;

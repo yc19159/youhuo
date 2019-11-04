@@ -10,9 +10,9 @@
           <div class="descript-content">
                <div class="item-price">
                  <span class="price-span">￥<span :style="{'font-size':'0.2rem'}">{9.99}</span>/天</span>   
-                 <span :style="{color:'#3BAD38','font-size':'0.13rem','line-height':'0.16rem',height:'0.16rem',
-          'margin-left':'0.12rem',border:'1px solid #25A721','border-radius':'0.02rem',width:'0.32rem',
-          'text-align':'center','margin-top':'0.05rem','font-weight':'normal',display:'block',float:'left'}">全新</span>
+                 <span class="quanxin" :style="{color:'white','font-size':'0.13rem','line-height':'0.16rem',height:'0.16rem',
+          'margin-left':'0.12rem','border-radius':'0.02rem',width:'0.32rem',
+          'text-align':'center','margin-top':'0.05rem','font-weight':'normal',display:'block',float:'left'}" >全新</span>
            <span class="halfyear"> 半年起租</span>
                </div>
                <p class="item-phone">Apple Iphone x11(A2322) 128Gb 黑色 移动联通电信4G手机 双卡双待</p>
@@ -24,10 +24,18 @@
                    最高押金：￥5000
                  </p>
                </div>
+               <div class="openMember">
+                <span class="sp-first">开通会员下单预计可得 <span class="orange">200</span> 积分</span>
+                <img src="../assets/image/more.png" class="more" alt="">
+                <span class="sp-third">立即开通</span>
+                
+               </div>
                <div class="descript-bottom">
-                 <span>免押金</span>
-                 <span>可续租</span>
-                 <span class="more"> X</span>
+                 <img src="../assets/image/good_gou.png" class="gouImg" alt="">
+                 <span class="sp1">免押金</span>
+                 <img src="../assets/image/good_gou.png" class="gouImg gouImg2" alt="">
+                 <span class="sp2">可续租</span>
+                 <img src="../assets/image/more.png" class="more more2" alt="">
                </div>
           </div>
        </div>
@@ -39,7 +47,7 @@
                    <p :style="{width:'2.9rem',float:'right',height:'0.55rem',
                   'box-sizing':'border-box','border-bottom':'1px solid #F5F6FA',
                   'font-size':'0.13rem',color:'#2F3031'}">{IphoneX s64 全新无锁一年起租起租}
-                  <span class="more"> X</span></p>
+                  <img src="../assets/image/more.png" class="more" alt=""></p>
                   
                  </div>
                  <div class="descript-sec-maiduan">
@@ -51,7 +59,7 @@
                   'box-sizing':'border-box','border-bottom':'1px solid #F5F6FA',
                   'font-size':'0.13rem',color:'#2F3031'}">可<span :style="{color:'#D13717',
                   'font-size':'0.14rem'}"> ￥7999.00 </span>买断
-                   <span class="more"> X</span></p>
+                   <img src="../assets/image/more.png" class="more" alt=""></p>
                  </div>
            </div>
        </div>
@@ -63,7 +71,7 @@
                    <p :style="{width:'2.9rem',float:'right',height:'0.53rem',
                   'box-sizing':'border-box','border-bottom':'1px solid #F5F6FA',
                   'font-size':'0.13rem',color:'#2F3031'}">{IphoneX s64 全新无锁一年起租起租}
-                  <span class="more"> X</span></p>
+                  <img src="../assets/image/more.png" class="more" alt=""></p>
                   
                  </div>
                  <div class="descript-third-canshu">
@@ -75,12 +83,22 @@
                   'box-sizing':'border-box','border-bottom':'1px solid #F5F6FA',
                   'font-size':'0.13rem',color:'#2F3031'}">可<span :style="{color:'#D13717',
                   'font-size':'0.14rem'}"> ￥7999.00 </span>买断
-                   <span class="more"> X</span></p>
+                   <img src="../assets/image/more.png" class="more" alt=""></p>
                  </div>
            </div>
        </div>
+       <div class="bg_bottom">
+          <div class="bottom">
+            <p class="bottom-title">商品详情</p>
+            <img src="../assets/image/good_zhouqi.png" alt="">
+             <img src="../assets/image/good_liucheng.png" alt="">
+              <img src="../assets/image/good_xuzu.png" alt="">
+               <img src="../assets/image/good_maiduan.png" alt="">
+                <img src="../assets/image/good_guihuan.png" alt="">
+          </div>
+       </div>
  
-        <van-goods-action>
+        <van-goods-action >
   <van-goods-action-icon icon="shop-o" text="店铺" />
   <van-goods-action-icon icon="chat-o" text="客服"  />
   <van-goods-action-icon icon="star-o" text="收藏"  />
@@ -95,8 +113,8 @@
             <div class="d-content-top">
                   <img src="" alt="">
                     <span class="price-span">￥<span :style="{'font-size':'0.2rem'}">{9.99}</span>/天</span>   
-                 <span :style="{color:'#3BAD38','font-size':'0.13rem','line-height':'0.16rem',height:'0.16rem',
-          'margin-left':'0.12rem',border:'1px solid #25A721','border-radius':'0.02rem',width:'0.32rem',
+                 <span class="quanxin" :style="{color:'white','font-size':'0.13rem','line-height':'0.16rem',height:'0.16rem',
+          'margin-left':'0.12rem','border-radius':'0.02rem',width:'0.32rem',
           'text-align':'center','margin-top':'0.05rem','font-weight':'normal',display:'block',float:'left'
         ,'margin-top':'0.75rem'}">全新</span>
             </div>
@@ -206,6 +224,7 @@ export default {
           },
  
         paynow(){
+          console.log(this.$route.params)
           // if(username){
    document.getElementsByClassName('goods-right-picker')[0].style.display="block";
           // }else{
@@ -267,14 +286,14 @@ margin-top: 0.43rem
 }
 .descript{
 width: 100%;
-height: 1.91rem;
+height: 2.21rem;
 background-color: white;
 border-radius: 0.2rem;
 overflow: hidden;
  }
 .descript-content{
 width: 3.34rem;
-height: 1.65rem;
+height: 1.95rem;
 margin: auto;
 margin-top: 0.22rem;
 overflow: hidden;
@@ -289,6 +308,12 @@ overflow: hidden;
     font-family: 'DIN-Bold';
     color: #B3381D;
     font-weight: bold;
+ }
+ .item-price .quanxin{
+   background: -webkit-linear-gradient(to left, #D50000, #FD9A28) !important;
+    background: -o-linear-gradient(to left, #D50000, #FD9A28) !important;
+    background: -moz-linear-gradient(to left, #D50000, #FD9A28) !important;
+    background: linear-gradient(to left, #D50000, #FD9A28) !important;
  }
  .item-price .halfyear{
    display: block;
@@ -320,21 +345,62 @@ overflow: hidden;
      font-size: 0.12rem;
    }
  }
+
+ .openMember{
+   width: 100%;
+   height: 0.3rem;
+   background: #EAF5FD;
+   margin-top: 0.1rem;
+   border-radius: 0.06rem;
+   span{
+     font-size: 0.12rem;
+     line-height: 0.3rem;
+     color: #5E6165;
+   }
+   .sp-first{
+    margin-left: 0.12rem;
+   }
+   .orange{
+     color: #E2A15E;
+   }
+   .more{
+     float: right;
+
+     margin-top: 0.1rem;
+     margin-right: 0.1rem;
+   }
+   .sp-third{
+     float: right;
+     margin-right: 0.1rem;
+    
+   }
+ }
  .descript-bottom{
    height: 0.12rem;
-   margin-top: 0.2rem;
+   margin-top: 0.1rem;
      span{
+       float: left;
        font-size: 0.12rem;
-       margin-left: 0.33rem;
+       margin-left: 0.05rem;
        color: #C7C7C7;
      }
-     span:first-child{
-        margin-left: 0;
+     .sp2{
+       margin-left: 0;
      }
-    
+     .gouImg{
+       float: left;
+       margin-top: 0.04rem;
+     }
+     .gouImg2{
+       margin-left: 0.3rem;
+     }
+ }
+ .more2{
+    margin-top: 0.1rem !important;
  }
   .more{
        float: right;
+       margin-top: 0.2rem;
      }
  .descript-sec{
    width: 100%;
@@ -363,7 +429,8 @@ overflow: hidden;
    width: 100%;
    height: 1.06rem;
    background-color: white;
-   margin-top: 0.12rem;margin-bottom: 0.7rem;
+   margin-top: 0.12rem;
+  //  margin-bottom: 0.7rem;
    border-radius: 0.2rem;
    .descript-third-content{
    width: 3.34rem;
@@ -411,10 +478,10 @@ overflow: hidden;
     line-height: 0.5rem;
     border: 0;
     border-radius: 0 !important;
-     background: -webkit-linear-gradient(to left, #007BFF, #3FE699) !important;
-    background: -o-linear-gradient(to left, #007BFF, #3FE699) !important;
-    background: -moz-linear-gradient(to left, #007BFF, #3FE699) !important;
-    background: linear-gradient(to left, #007BFF, #3FE699) !important;
+    background: -webkit-linear-gradient(to left, #D50000, #FD9A28) !important;
+    background: -o-linear-gradient(to left, #D50000, #FD9A28) !important;
+    background: -moz-linear-gradient(to left, #D50000, #FD9A28) !important;
+    background: linear-gradient(to left, #D50000, #FD9A28) !important;
 } 
 
 .goods-right-picker {
@@ -449,6 +516,12 @@ overflow: hidden;
            height: 1rem;
            border: 1px solid;
            float: left;
+         }
+         .quanxin{
+         background: -webkit-linear-gradient(to left, #D50000, #FD9A28) !important;
+         background: -o-linear-gradient(to left, #D50000, #FD9A28) !important;
+         background: -moz-linear-gradient(to left, #D50000, #FD9A28) !important;
+         background: linear-gradient(to left, #D50000, #FD9A28) !important;
          }
     .price-span{
     display: block;
@@ -609,15 +682,41 @@ overflow: hidden;
          height: 0.44rem;
          text-align: center;
          line-height: 0.44rem;
-         background: -webkit-linear-gradient(to left, #007BFF, #3FE699) !important;
-         background: -o-linear-gradient(to left, #007BFF, #3FE699) !important;
-         background: -moz-linear-gradient(to left, #007BFF, #3FE699) !important;
-         background: linear-gradient(to left, #007BFF, #3FE699) !important;
+          background: -webkit-linear-gradient(to left, #D50000, #FD9A28) !important;
+          background: -o-linear-gradient(to left, #D50000, #FD9A28) !important;
+         background: -moz-linear-gradient(to left, #D50000, #FD9A28) !important;
+         background: linear-gradient(to left, #D50000, #FD9A28) !important;
          border-radius: 0.22rem;
          color: white;
        }
     }
   }
 }
+ .bg_bottom{
+   width: 100%;
+   background: white;
+   margin-top: 0.12rem;
+   margin-bottom: 0.5rem;
+ }
+
+  .bottom{
+    width: 3.43rem;
+    overflow: hidden;
+    margin: auto;
+  }
+  .bottom .bottom-title{
+    font-size: 0.13rem;
+    color: #EB5516;
+    font-weight: bold;
+    margin-top: 0.2rem;
+    height: 0.14rem;
+    line-height: 0.14rem;
+    border-left: 3px solid #EB5516;
+    padding-left: 0.05rem;
+  }
+  .bottom img{
+    width: 100%;
+    margin-top: 0.12rem;
+  }
 
 </style>

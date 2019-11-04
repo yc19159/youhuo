@@ -9,8 +9,8 @@
   @search="onSearch"
   id="topSearch"
 >
-  <div slot="action" @click="onSearch" id="search">
-   
+  <div slot="action" @click="onSearch" id="seasearchrch">
+      <img src="../assets/image/home_chat.png" alt="">
     </div>
 </van-search>
 <div class="bg_banner">
@@ -18,10 +18,9 @@
       <router-link  to="list">
 <van-swipe :autoplay="3000" indicator-color="white">
    
-  <van-swipe-item  >1</van-swipe-item>
-  <van-swipe-item>2</van-swipe-item>
-  <van-swipe-item>3</van-swipe-item>
-  <van-swipe-item>4</van-swipe-item>
+  <van-swipe-item ><img src="../assets/image/home_banner1.png" alt="" class="bannerImg"> </van-swipe-item>
+  <van-swipe-item><img src="../assets/image/home_banner2.png" alt="" class="bannerImg"> </van-swipe-item>
+  <van-swipe-item><img src="../assets/image/home_banner3.png" alt="" class="bannerImg"> </van-swipe-item>
 </van-swipe>
  </router-link>
     </div>
@@ -29,46 +28,35 @@
     <div class="mainContent">
   <div class="ban-list">
           <ul class="ban-list-ul">
-            <li><p class="yuan"></p> <p>办公</p> </li>
-            <li><p class="yuan"></p><p>数码</p></li>
-            <li><p class="yuan"></p><p>家电</p></li>
-            <li><p class="yuan"></p><p>游戏</p></li>
-            <li><p class="yuan"></p><p>全部</p></li>
+            <li><img src="../assets/image/home_qiye.png" alt=""> <p>办公</p> </li>
+            <li><img src="../assets/image/home_bangong.png" alt=""><p>数码</p></li>
+            <li><img src="../assets/image/home_jiadian.png" alt=""><p>家电</p></li>
+            <li><img src="../assets/image/home_shuma.png" alt=""><p>游戏</p></li>
+            <li><img src="../assets/image/home_all.png" alt=""><p>全部</p></li>
           </ul>
      </div>
      <div class="advertise">
-       <img src="../assets/image/advertise.png"/>
+       <img src="../assets/image/home_haibao.png"/>
      </div>
      <div class="content-bottom">
          <ul class="content-bottom-ul">
            <li>
              <p class="strong">热门排行</p>
              <p class="small">热租爆品</p>
-             <button class="look look-first">
-                  点击查看
-             </button>
+             <img src="../assets/image/home_hot.png" class="hot" alt="">
+             <img src="../assets/image/home_remen.png" class="remen" alt="">
            </li>
            <li>
               <p class="strong">优选租品</p>
-               <p class="small">推荐租品</p>
-               <button class="look look-second">
-                  点击查看
-             </button>
-           </li>
-           <li>
-              <p class="strong">特价短租</p>
-               <p class="small">短租尝鲜一元起</p>
-               <button class="look look-third">
-                  点击查看
-             </button>
+              <p class="small">推荐租品</p>
+              <img src="../assets/image/home_youxuan.png" class="youxuan" alt="">
            </li>
            <li>
               <p class="strong">租就送</p>
                <p class="small">白租不用还</p>
-               <button class="look look-fourth">
-                     点击查看
-               </button>
+             <img src="../assets/image/home_song.png" class="song" alt="">
            </li>
+          
          </ul>
      </div>
     </div>
@@ -137,7 +125,6 @@ export default {
   width: 0.21rem;
   margin-left: 0.30rem;
   height: 0.26rem;
-  border: 1px solid; 
 }
 .bg_banner{
   width: 100%;
@@ -160,7 +147,10 @@ export default {
   text-align: center;
   background: blue;
 }
-
+ .banner .bannerImg{
+   width: 100%;
+   height: 1.55rem;
+ }
 .banner .van-swipe /deep/ .van-swipe__indicators .van-swipe__indicator--active{
  width: 0.2rem ;
  border-radius: 0.06rem;
@@ -185,8 +175,8 @@ export default {
   
   float: left;
   margin-top: 0.3rem;
-  margin-right: 0.30rem;
-    text-align: center;
+  margin-right: 0.2rem;
+  text-align: center;
   font-size: 0.13rem;
 }
 .ban-list-ul li .yuan{
@@ -207,7 +197,7 @@ export default {
 .advertise img{
  margin: auto;
  width:  3.43rem;
- height: 0.84rem;
+ height: 1.2rem;
 }
 .content-bottom{
  width:  3.43rem;
@@ -217,17 +207,41 @@ export default {
 }
 .content-bottom .content-bottom-ul li{
   width: 1.66rem;
-  height: 1.05rem;
+  height: 0.9rem;
   float: left;
-  border: 1px solid;
   box-sizing: border-box;
-  margin-top: 0.11rem;
+  margin-top: 0.05rem;
   border-radius: 0.1rem;
   background: white;
-}
-.content-bottom .content-bottom-ul li:nth-child(2n){
   margin-left: 0.11rem;
-  
+}
+.content-bottom .content-bottom-ul li:first-child{
+   width: 1.66rem;
+  height: 1.85rem;
+   margin-left: 0rem;
+   background: #FFE3CE;
+   border-radius: 0.12rem;
+   position: relative;
+}
+.content-bottom .content-bottom-ul li .hot{
+ position: absolute;
+ top: 0;
+ right: 0;
+}
+.content-bottom .content-bottom-ul li .remen{
+  margin-top: 0.15rem;
+  margin-left: 0.3rem;
+}
+.content-bottom .content-bottom-ul li .youxuan,.content-bottom .content-bottom-ul li .song{
+  float: right;
+  margin-top: -0.3rem;
+  margin-right: 0.15rem;
+}
+.content-bottom .content-bottom-ul li:nth-child(2){
+  background: #CFEBFF;
+}
+.content-bottom .content-bottom-ul li:nth-child(3){
+  background:#FFD7EC;
 }
 .content-bottom-ul::after{
     content:" ";

@@ -100,11 +100,10 @@ export default {
     height: 0.03rem;
     background-color: #f44;
     border-radius: 0.03rem;
-  
-    background: -webkit-linear-gradient(to left, #3FE699, #007BFF) !important;
-    background: -o-linear-gradient(to left, #3FE699, #007BFF) !important;
-    background: -moz-linear-gradient(to left, #3FE699, #007BFF) !important;
-    background: linear-gradient(to left, #3FE699, #007BFF) !important;
+    background: -webkit-linear-gradient(to left, #D50000, #FD9A28) !important;
+    background: -o-linear-gradient(to left, #D50000, #FD9A28) !important;
+    background: -moz-linear-gradient(to left, #D50000, #FD9A28) !important;
+    background: linear-gradient(to left, #D50000, #FD9A28) !important;
 }
  .van-tabs /deep/ .van-tab--active{
    color: #007BFF;

@@ -2,17 +2,23 @@
   <div class="mine">
       <div :style="{height:'2.72rem',background:'white',overflow:'hidden'}">
      <div class="top">
+          <router-link to="register">
          <img src="" alt="" class="news">
+          </router-link>
+         <router-link to="setting">
          <img src="" alt="" class="setting">
+         </router-link>
      </div>
       <div class="bg-consume">
                <div class="consume">
+                  
      <div v-if="isLogin" class="login">
            <Uploadavatar :username="isLogin"/>
           <!-- <img src="" alt="" class="userImg" > -->
           <div class="login-right">
                 <p class="userName">大魔王的小怪兽</p>
                 <img src="" class="clubber" alt="">
+               
                 <img src="" class="more" alt="">
           </div>
 
@@ -56,10 +62,12 @@
                    <p class="left">
                        我的订单
                    </p>
+                    <router-link to="/myorder">
                     <p class="right">
                         全部订单
                     </p>
                     <img src="" alt="" class="more">
+                     </router-link>
                </div>
                <ul>
                    <li>
@@ -248,10 +256,10 @@ export default {
     border-radius: 0.155rem;
     color: white;
     font-size: 0.14rem;
-    background: -webkit-linear-gradient(to left, #3FE699, #007BFF) !important;
-    background: -o-linear-gradient(to left, #3FE699, #007BFF) !important;
-    background: -moz-linear-gradient(to left, #3FE699, #007BFF) !important;
-    background: linear-gradient(to left, #3FE699, #007BFF) !important;
+    background: -webkit-linear-gradient(to left, #D50000, #FD9A28) !important;
+    background: -o-linear-gradient(to left, #D50000, #FD9A28) !important;
+    background: -moz-linear-gradient(to left, #D50000, #FD9A28) !important;
+    background: linear-gradient(to left, #D50000, #FD9A28) !important;
 }
 .login{
      width: 3.43rem;

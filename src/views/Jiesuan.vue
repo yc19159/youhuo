@@ -4,20 +4,28 @@
        <p class="title">填写订单</p>
        <div class="bg-address">
 <div class="address">
+    <img src="../assets/image/jiesuan_dingwei.png" alt="" class="position">
+    <div :style="{'margin-left':'0.41rem'}">
+       
     <div class="address-default">
-        <span class="sp1">默认</span>
-        <span class="sp2">湖北省武汉市江汉区</span>
+         <span class="username">小橙子</span> 
+        <span class="usertel">18834568888</span>
     </div>
     <div class="address-d" @click="gotoAddaddress">
         <p class="address-detail">请编辑地址</p>
-        <span class="more">></span>
+        <img src="../assets/image/more.png" alt="" class="more">
     </div>
-    <span class="username">小橙子</span> 
-    <span class="usertel">18834568888</span>
+     <span class="sp1">收货不便时，可免费选择暂存服务</span>
+    </div>
 </div>
  </div>
      <div class="bg-content">
          <div class="content">
+              <div class="store">
+                    <img src="../assets/image/dianpu.png" alt="" class="store-img">
+                    <span class="storename">{佳佳手机专营店}</span>
+                     <img src="../assets/image/more.png" alt="" class="more">
+             </div>
              <div class="goods-desc">
                       <img src="" alt="">
                      <div class="goods-right">
@@ -40,15 +48,18 @@
                  <span class="carrier-arrive">到付</span>
              </div>
               <div class="daoqimd">
-                 <span class="carrier-p">到期买断金额</span>
+                 <span class="carrier-p maiduan">到期买断金额</span>
                  <span class="carrier-arrive">￥{19.00}</span>
              </div>
               <div class="yunxian">
-                 <span class="carrier-p">运险费</span>
+                  <img src="../assets/image/jiesuan_wenhao.png" class="wenhao" alt="">
+                 <span class="carrier-p sp3">运险费</span>
+                 <span class="return">退换货可赔付</span>
+                 <img src="../assets/image/jiesuan_choose.png" class="choose" alt="">
                  <span class="carrier-arrive">￥10.00</span>
              </div>
               <div class="liuyan">
-                 <span class="carrier-p">订单留言</span>
+                 <span class="carrier-p sp4">订单留言</span>
                 <input type="text" class="dd-liuyan" placeholder="选填，建议请先和商家协商一致"> 
              </div>
              <div class="total">
@@ -77,14 +88,14 @@
              <p class="paynum" >￥<span :style="{'font-size':'0.38rem'}">
                  999.<span :style="{'font-size':'0.22rem'}">00</span> </span> </p>
                  <div class="zifubao">
-                      <img src="" alt="">
+                      <img src="../assets/image/zhifubao.png" alt="">
                       <span class="zfb-text">支付宝支付</span>
-                      <p class="zfb-check"></p>
+                      <img src="../assets/image/jiesuan_unchoose.png" alt="" class="zfb-check">
                  </div>
                    <div class="weixin">
-                       <img src="" alt="">
+                       <img src="../assets/image/weixin.png" alt="">
                       <span class="wx-text">微信支付</span>
-                      <p class="wx-check"></p>
+                      <img src="../assets/image/jiesuan_choose.png" alt="" class="wx-check">
                  </div>
                  <button class="pay-sure" @click="paySure">确认支付</button>
           </div>
@@ -167,34 +178,14 @@ export default {
      mounted() {
          this.changeSearch(false);
          
-        //  this.$axios.post('/vue/getaddress',{
-        //      username:sessionStorage.username
-        //  }).then(res=>{
-        //     this.dizhi=res.data.result;
-        //     // console.log(this.dizhi[0])
-        //  })
-
-        //  this.$axios.post("/vue/jiesuanshangping",{
-        //      username:sessionStorage.username,
-        //      goodId:sessionStorage.goodId,
-        //  }).then(res=>{
-            
-        //      this.good=res.data.result;
-        //      console.log( this.good)
-        //     if(!res.data.result){
-        //         this.$axios.post("/vue/jiesuanshangping1",{
-        //      username:sessionStorage.username,
-        //      goodId:sessionStorage.goodId,
-        //  }).then(res=>{
-        //      this.good=res.data.result     
-        //  })
-        //     }
-            
-        //  })
+       
      },
 }
 </script>
 <style scoped lang="scss">
+.head{
+    background: #F5F6FA;
+}
  .title{
   float: right;
   height: 0.2rem;
@@ -221,29 +212,29 @@ export default {
   }
   .bg-address{
       width: 100%;
-      height: 1.19rem;
+      height: 1.09rem;
      background: white;
      overflow: hidden;
+     border-radius: 0.2rem;
+     margin-top: 0.1rem;
   }
-  .address-default .sp1{
-      border-radius: 0.03rem;
-      background: #D0E7FF;
-      color: #1988FF;
-      font-size: 0.12rem;
-      padding: 0.03rem 0.06rem;
+  .position{
+      width: 0.2rem;
+      height: 0.22rem;
+      float: left;
+      margin-top: 0.2rem;
   }
-  .address-default .sp2{
-      font-size: 0.13rem;
-      color: #2F3031;
-      margin-left: 0.1rem;
-  }
+ .address-default{
+     height: 0.2rem;
+     line-height: 0.2rem;
+ }
   .address-d{
-      height: 0.35rem;
+    float: left;
+    
   }
   .address .address-detail{
-      font-size: 0.16rem;
-      font-weight: bold;
-      margin-top: 0.11rem;
+      font-size: 0.14rem;
+      margin-top: 0.06rem;
       float: left;
       width: 2.8rem;
   }
@@ -252,20 +243,27 @@ export default {
       float: right;
       margin-top: 0.11rem;
   }
+  .sp1{
+      color: #FD9828;
+      font-size: 0.12rem;
+      margin-top: 0.2rem;
+      float: left;
+      margin-top: 0;
+  }
   .address .username{
       display: block;
       width: 0.5rem;
-      margin-top: 0.11rem;
-      font-size: 0.12rem;
+      font-size: 0.16rem;
       color: #2F3031;
       float: left;
+      font-weight: bold;
   }
    .address .usertel{
-        display: block;
-      margin-top: 0.11rem;
+      display: block;
+      margin-top: 0rem;
       font-size: 0.12rem;
-      color: #2F3031;
-    float: left;
+      color: #5E6165;
+      float: left;
    }
    .bg-content{
        height: 3.96rem;
@@ -334,16 +332,44 @@ export default {
          font-weight: bold;
          float: left;
          line-height: 0.15rem;
+         margin-left: 0.5rem;
      }
+     .maiduan{
+         margin-left: 0rem;
+     }
+     .sp3{
+          margin-left: 0.4rem;
+     }
+     .sp4{
+         margin-left: 0.27rem;
+     }
+      .choose{
+          float: right;
+      }
       .carrier-arrive{
          font-size: 0.12rem;
          color: #2F3031;
          float: right; 
          line-height: 0.15rem;
+         margin-right: 0.05rem;
      }
      .daoqimd , .yunxian , .liuyan{
           margin-top: 0.3rem;
           height: 0.26rem;
+     }
+     .yunxian .wenhao{
+         float: left;
+         margin-left: 0.17rem;
+     }
+     .yunxian .return{
+      font-size: 0.12rem;
+      margin-top: 0.12rem;
+      color: #C7C7C7;
+      margin-left: 0.23rem;
+      line-height: 0.1rem;
+     }
+     .yunxian .sp3{
+         margin-left: 0.06rem;
      }
     .liuyan .dd-liuyan{
          outline: none;
@@ -398,10 +424,10 @@ export default {
         margin-top: 0.05rem;
         border-radius: 0.2rem;
         line-height: 0.4rem;
-         background: -webkit-linear-gradient(to left, #007BFF, #3FE699) !important;
-         background: -o-linear-gradient(to left, #007BFF, #3FE699) !important;
-         background: -moz-linear-gradient(to left, #007BFF, #3FE699) !important;
-         background: linear-gradient(to left, #007BFF, #3FE699) !important;
+         background: -webkit-linear-gradient(to left, #D50000, #FD9A28) !important;
+         background: -o-linear-gradient(to left, #D50000, #FD9A28) !important;
+         background: -moz-linear-gradient(to left, #D50000, #FD9A28) !important;
+         background: linear-gradient(to left, #D50000, #FD9A28) !important;
     }
     .pay{
   display: none;
@@ -459,7 +485,6 @@ export default {
           img{
               width: 0.3rem;
               height: 0.3rem;
-              background: gray;
               border-radius: 50%;
               float: left;
               
@@ -470,7 +495,6 @@ export default {
           .zfb-check{
               width: 0.15rem;
               height: 0.15rem;
-              border: 1px solid grey;
               border-radius: 50%;
               float: right;
               margin-top: 0.07rem;
@@ -484,7 +508,6 @@ export default {
           img{
               width: 0.3rem;
               height: 0.3rem;
-              background: gray;
               border-radius: 50%;
               float: left;
               
@@ -496,7 +519,6 @@ export default {
               width: 0.15rem;
               height: 0.15rem;
             //   border: 1px solid grey;
-             background: #017CFF;
               border-radius: 50%;
               float: right;
               margin-top: 0.07rem;
@@ -519,4 +541,24 @@ export default {
     }
   }
 }
+.content .store{
+        height: 0.2rem;
+        margin-top: 0.2rem;
+        .store-img{
+            width: 0.15rem;
+            height: 0.15rem;
+            float: left; 
+            margin-top: 0.02rem;
+        }
+        .storename{
+            float: left;
+            font-size: 0.13rem;
+            margin-left: 0.1rem;
+        }
+        .more{
+            margin-top: 0.08rem;
+            margin-left: 0.05rem;
+            float: left;
+        }
+    }
 </style>

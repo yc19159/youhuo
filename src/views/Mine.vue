@@ -3,10 +3,10 @@
       <div :style="{height:'2.72rem',background:'white',overflow:'hidden'}">
      <div class="top">
           <router-link to="register">
-         <img src="" alt="" class="news">
+         <!-- <img src="" alt="" class="news"> -->
           </router-link>
          <router-link to="setting">
-         <img src="" alt="" class="setting">
+         <img src="../assets/image/mine_setting.png" alt="" class="setting">
          </router-link>
      </div>
       <div class="bg-consume">
@@ -17,9 +17,9 @@
           <!-- <img src="" alt="" class="userImg" > -->
           <div class="login-right">
                 <p class="userName">大魔王的小怪兽</p>
-                <img src="" class="clubber" alt="">
+                <img src="../assets/image/mine_kthuiyuan.png" class="clubber" alt="">
                
-                <img src="" class="more" alt="">
+                <img src="../assets/image/more.png" class="more" alt="">
           </div>
 
            
@@ -52,7 +52,10 @@
            </ul>
        </div>
 
-       <img src="" alt="" class="vipimg">
+      <div class="vipdiv">
+
+
+      </div>
                </div>
       </div>
       </div>
@@ -66,24 +69,24 @@
                     <p class="right">
                         全部订单
                     </p>
-                    <img src="" alt="" class="more">
+                    <img src="../assets/image/more.png" alt="" class="more">
                      </router-link>
                </div>
                <ul>
                    <li>
-                       <img src="" alt="">
+                       <img src="../assets/image/mine_daifukuan.png" alt="">
                        <p>待付款</p>
                    </li>
                      <li>
-                       <img src="" alt="">
+                       <img src="../assets/image/mine_daifahuo.png" alt="">
                        <p>待发货</p>
                    </li>
                      <li>
-                       <img src="" alt="">
+                       <img src="../assets/image/mine_daishouhuo.png" alt="">
                        <p>待收货</p>
                    </li>
                      <li>
-                       <img src="" alt="">
+                       <img src="../assets/image/mine_yiwancheng.png" alt="">
                        <p>已完成</p>
                    </li>
                </ul>
@@ -93,36 +96,33 @@
            <div class="service">
                <div class="allorder">
                    <p class="left">
-                       我的订单
+                       我的服务
                    </p>
-                    <p class="right">
-                        全部订单
-                    </p>
-                    <img src="" alt="" class="more">
+                   
                </div>
                <ul>
                    <li>
-                       <img src="" alt="">
-                       <p>待付款</p>
+                       <img src="../assets/image/mine_youhuiquan.png" alt="">
+                       <p>优惠券</p>
                    </li>
                      <li>
-                       <img src="" alt="">
-                       <p>待发货</p>
+                       <img src="../assets/image/mine_qyzulin.png" alt="">
+                       <p>企业租赁</p>
                    </li>
                      <li>
-                       <img src="" alt="">
-                       <p>待收货</p>
+                       <img src="../assets/image/mine_yjfankui.png" alt="">
+                       <p>意见反馈</p>
                    </li>
                      <li>
-                       <img src="" alt="">
-                       <p>已完成</p>
+                       <img src="../assets/image/mine_cjwenti.png" alt="">
+                       <p>常见问题</p>
                    </li>
                </ul>
            </div>
      </div>
 
      <div class="tuijian">
-         <img src="" alt="" class="tuijian-img">
+         <img src="../assets/image/mine_tuijian.png" alt="" class="tuijian-img">
          <p class="recommendForYou">为你推荐</p>
      </div>
      <div class="price">
@@ -215,8 +215,6 @@ export default {
     float: right;
     width: 0.18rem;
     height: 0.19rem;
-    background: grey;
-    margin-right: 0.45rem;
 }
 .bg-consume{
     width: 100%;
@@ -288,11 +286,12 @@ export default {
     font-weight: normal;
     color: #C7C7C7;
 }
-.consume .vipimg{
+.consume .vipdiv{
     width: 100%;
     height: 0.6rem;
     border-radius: 0.12rem;
-    background: grey;
+    background:url("../assets/image/mine_bg.png") no-repeat;
+    background-size:cover;
     margin-top: 0.15rem;
 }
 .bg-myorder{
@@ -322,14 +321,13 @@ margin-top: 0.15rem;
 }
 .allorder .right{
  font-size: 0.12rem;
- margin-left: 2.5rem;
+ margin-left: 2.46rem;
  width: 0.5rem;
 }
 .allorder .more{
   float: right;
   width: 0.08rem;
   height: 0.12rem;
-  background: grey;
   margin-top: -0.15rem;
 }
 .bg-myorder .myorder ul{
@@ -350,9 +348,8 @@ margin-top: 0.2rem;
 }
 
 .myorder ul li img{
-    width: 0.2rem;
-    height: 0.22rem;
-    background: grey;
+    width: 0.23rem;
+    height: 0.2rem;
     margin-left: 0.26rem;
 }
 .myorder ul li p{
@@ -391,9 +388,8 @@ margin-top: 0.2rem;
 }
 
 .service ul li img{
-    width: 0.2rem;
-    height: 0.22rem;
-    background: grey;
+    width: 0.22rem;
+    height: 0.19rem;
     margin-left: 0.26rem;
 }
 .service ul li p{
@@ -409,8 +405,8 @@ margin-top: 0.2rem;
 .tuijian .tuijian-img{
     width: 0.15rem;
     height: 0.16rem;
-    background: grey;
     float: left;
+    margin-top: 0.03rem;
 }
 .tuijian .recommendForYou{
     font-weight: bold;
@@ -493,16 +489,12 @@ margin-top: 0.2rem;
      margin-top: 0.15rem;
  }
  .login .login-right .clubber{
-  width: 0.8rem;
-  height: 0.2rem;
-  background: grey;
+  width: 0.88rem;
+  height: 0.25rem;
   margin-top: 0.15rem;
  }
  .login .login-right .more{
-     width: 0.08rem;
-     height: 0.12rem;
      float: right;
-     background: grey;
      margin-top: -0.3rem;
  }
 </style>

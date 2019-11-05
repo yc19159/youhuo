@@ -3,7 +3,7 @@
          <Head ></Head> 
        <p class="title">包邮卷</p>
        <div class="deliveryPostal">
-
+            <img src="../assets/image/postal_diyongquan.png" alt="">
        </div>
       
     </div>
@@ -47,15 +47,17 @@ export default {
   left: 0.6rem;
   }
   .deliveryPostal{
-    width: 3rem;
-    height: 1rem;
-    background: -webkit-linear-gradient(to left, #FEA1A5, #FF6D74) !important;
-    background: -o-linear-gradient(to left, #FEA1A5, #FF6D74) !important;
-    background: -moz-linear-gradient(to left, #FEA1A5, #FF6D74) !important;
-    background: linear-gradient(to left, #FEA1A5, #FF6D74) !important;
+    width: 100%;
+    height: 100%;
+ 
     margin: auto;
     margin-top: 0.22rem;
 
+  }
+  .deliveryPostal img{
+    width: 3.64rem;
+    height: 1.95rem;
+    margin-left: 0.1rem;
   }
   .deliveryPostal:first-child{
     margin-top: 0.5rem;

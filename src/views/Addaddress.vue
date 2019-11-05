@@ -15,7 +15,18 @@
 </template>
 
 <script>
-
+// window.onload=function () {
+//    var postal=document.getElementsByClassName('van-cell')[6];
+//         var moren=document.getElementsByClassName('van-cell')[7];
+//         var cancel=document.getElementsByClassName('van-picker__cancel')[0];
+//         var confirm=document.getElementsByClassName('van-picker__confirm')[0];
+//             postal.style.display="none";
+//              moren.style.display="none";
+//             cancel.style.backgroundColor='white';
+//              cancel.style.border='white';
+//               confirm.style.backgroundColor='white';
+//              confirm.style.border='white';
+// }
 import {mapState,mapMutations} from "vuex";
 import Head from '@/components/Head.vue';
 export default {
@@ -3825,11 +3836,14 @@ export default {
   components:{
    Head,
   },
+
   mounted(){
     this.changeSearch(false);
     function unshow() {
-        var postal=document.getElementsByClassName('van-cell')[6];
-        var moren=document.getElementsByClassName('van-cell')[7];
+        var postal=document.getElementsByClassName('van-cell')[5];
+        console.log(postal)
+        var moren=document.getElementsByClassName('van-cell')[6];
+        console.log(moren)
         var cancel=document.getElementsByClassName('van-picker__cancel')[0];
         var confirm=document.getElementsByClassName('van-picker__confirm')[0];
             postal.style.display="none";
@@ -3845,6 +3859,7 @@ export default {
     },
    methods: {
      ...mapMutations(['changeSearch']),
+     
     onSave() {
      var name=document.getElementsByClassName('van-field__control')[0].value; 
      var tel=document.getElementsByClassName("van-field__control")[1].value;
@@ -3872,7 +3887,7 @@ export default {
   },
    
     computed: {
-      ...mapState(['searchShow'])
+      ...mapState(['searchShow']),
     },
 }
 </script>

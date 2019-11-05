@@ -109,6 +109,16 @@ export default new VueRouter({
       component: ()=> import('@/views/Addaddress.vue'),
     },
     {
+      path: '/addressmanage',
+      name: 'addressmanage',
+      component: ()=> import('@/views/AddressManage.vue'),
+    },
+    {
+      path: '/dianpu',
+      name: 'dianpu',
+      component: ()=> import('@/views/Dianpu.vue'),
+    },
+    {
       path: '/vipmember',
       name: 'vipmember',
       component: ()=> import('@/views/VipMember.vue'),

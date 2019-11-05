@@ -145,7 +145,6 @@ export default {
    width: 3.43rem;
   height: 1.36rem !important;
   text-align: center;
-  background: blue;
 }
  .banner .bannerImg{
    width: 100%;

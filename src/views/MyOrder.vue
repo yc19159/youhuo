@@ -3,17 +3,12 @@
         <Head></Head>
          <van-tabs v-model="active">
           <van-tab title="全部">
-    
-    </van-tab>
-  <van-tab title="待付款">内容 2</van-tab>
-  <van-tab title="待收货">内容 3</van-tab>
-  <van-tab title="已完成">内容 3</van-tab>
-</van-tabs>
-  <div class="bg-content">
+    <div class="bg-content">
          <div class="content">
               <div class="store">
-                    <img src="" alt="" class="store-img">
+                    <img src="../assets/image/dianpu.png" alt="" class="store-img">
                     <span class="storename">{佳佳手机专营店}</span>
+                    <img src="../assets/image/more.png" alt="" class="more">
                      <span class="state">交易成功</span>
              </div>
              <div class="goods-desc">
@@ -35,8 +30,7 @@
              </div> 
              <div class="total">
                   <span class="total-number">共200件</span>
-                  <span class="xiaoji"> 小计：<span 
-                  :style="{color:'#B3381D'}">￥</span>
+                  <span class="xiaoji"> 小计：<span :style="{color:'#B3381D'}">￥</span>
                   <span :style="{color:'#B3381D','font-size':'0.17rem'}">999.00</span> </span>
              </div>
              <div class="operate">
@@ -47,6 +41,12 @@
              </div>
              
               </div>
+    </van-tab>
+  <van-tab title="待付款">内容 2</van-tab>
+  <van-tab title="待收货">内容 3</van-tab>
+  <van-tab title="已完成">内容 3</van-tab>
+</van-tabs>
+  
         
               
     </div>
@@ -107,6 +107,10 @@ export default {
 }
  .van-tabs /deep/ .van-tab--active{
    color: #007BFF;
+}
+.van-tabs /deep/ .van-tabs__wrap{
+   margin-left: 0;
+   width: 100%;
 }
 .bg-content{
        height:2.55rem;
@@ -173,7 +177,6 @@ export default {
     .content .store .store-img{
             width: 0.15rem;
             height: 0.15rem;
-            background:grey;
             float: left; 
             margin-top: 0.02rem;
         }
@@ -182,6 +185,13 @@ export default {
             font-size: 0.13rem;
              margin-left: 0.1rem;
         }
+    .content .store .more{
+           float: left;
+           width: 0.075rem;
+           height: 0.12rem;
+           margin-left: 0.08rem;
+           margin-top: 0.05rem;
+         }
     .content .store .state{
         float: right;
         font-size: 0.13rem;
@@ -191,12 +201,12 @@ export default {
         margin-top:  0.16rem;
     }
     .total .total-number{
-        margin-left: 1.72rem;
+        margin-left: 45%;
         color: #C7C7C7;
         font-size: 0.12rem;
     }
     .total .xiaoji{
-        margin-left: 0.14rem;
+        margin-left: 0.1rem;
         font-size: 0.13rem;
         font-weight: bold;
     }
@@ -213,15 +223,15 @@ export default {
         line-height: 0.22rem;
         font-size: 0.13rem;
         border-radius: 0.13rem;
-        padding-left: 0.12rem;
-        padding-right: 0.12rem;
+        padding-left: 0.1rem;
+        padding-right: 0.1rem;
         float: left;
     }
  .content .operate .comment{
      margin-left: 1.7rem;
  }
  .content .operate .buyonce{
-     margin-left: 0.17rem;
+     margin-left: 0.15rem;
  }
  .content .operate .pay{
      float: right;
@@ -229,4 +239,5 @@ export default {
      border: 1px solid  #007BFF;
 
  }
+
 </style>

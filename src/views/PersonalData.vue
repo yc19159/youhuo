@@ -4,17 +4,17 @@
        <p class="title">个人信息</p>
        <div class="touxiang">
            <p class="tx-p">头像</p>
-           <img src="" class="more" alt="">
+           <img src="../assets/image/more.png" class="more" alt="">
            <img src="" alt="" class="tx-img">
        </div>
        <div class="nickname">
            <p class="nick">昵称</p>
-            <img src="" class="more" alt="">
+            <img src="../assets/image/more.png" class="more" alt="">
            <span class="name">大魔王</span>
        </div>
        <div class="level">
              <p class="hy-title">会员等级</p>
-            <img src="" class="more" alt="">
+            <img src="../assets/image/more.png" class="more" alt="">
            <span class="hy-level">lv1</span>
        </div>
     </div>
@@ -58,10 +58,9 @@ export default {
   left: 0.6rem;
  }
  .more{
-     width: 0.08rem;
-     height: 0.12rem;
+     width: 0.06rem;
+     height: 0.11rem;
      float: right;
-     background: grey;
      margin-top: 0.22rem;
    }
  .touxiang,.nickname, .level{

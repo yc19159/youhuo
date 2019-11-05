@@ -34,6 +34,8 @@
                            <span class="zhekou">享100%返现机会，会员折扣</span>
 
                            <ul>
+                               <img src="../assets/image/vip_firstmonth.png" alt="" class="firstmonth">
+                               <img src="../assets/image/vip_givediscount.png" alt="" class="givediscount">
                                <li v-for="(item,index) in list" :key="index" :class="{'baoyue':!item.isActive,'active':item.isActive }"  @click='changeActive(index)'>
                                   <p class="lianxu">{{item.lianxu}}</p> 
                                   <p class="price">￥<span class="yuan">{{item.price}}</span> </p>
@@ -52,25 +54,25 @@
           </div>
           <div class="bg-quanyi">
                <div class="quanyi">
-                    <p class="quanli-title">会员权力</p>
+                    <p class="quanli-title">会员权益</p>
                     <ul>
                         <li>
-                            <img src="" alt="">
+                            <img src="../assets/image/vip_jifen.png" alt="">
                              <p >积分抵现金</p>
                              <span>100%返现机会</span>
                         </li>
                         <li>
-                            <img src="" alt="">
+                            <img src="../assets/image/vip_huiyuanzk.png" alt="">
                              <p >会员折扣</p>
                              <span>会员专享折扣</span>
                         </li>
                         <li>
-                            <img src="" alt="">
+                            <img src="../assets/image/vip_baoyouquan.png" alt="">
                              <p >包邮卷</p>
                              <span>归还包邮券</span>
                         </li>
                         <li>
-                            <img src="" alt="">
+                            <img src="../assets/image/vip_zskefu.png" alt="">
                              <p >专属客服</p>
                              <span>优先接听</span>
                         </li>
@@ -223,10 +225,25 @@ export default {
       margin-left: 0.12rem;
   }
   .openMember .kaitong ul{
+      position: relative;
       width:5.4rem;
       height: 1.18rem;
       margin-top: 0.32rem;
       /* overflow-x: scroll; */
+  }
+  .openMember .kaitong ul .firstmonth{
+     position: absolute;
+     width: 0.65rem;
+     height: 0.32rem;
+     top: -0.16rem;
+     left: 0.45rem;
+  }
+  .openMember .kaitong ul .givediscount{
+      position: absolute;
+      width: 0.65rem;
+      height: 0.32rem;
+      top: -0.16rem;
+      left: 2.55rem;
   }
   .openMember .kaitong ul li{
       float: left;
@@ -321,8 +338,7 @@ export default {
    }
    .quanyi ul li img{
        width: 0.4rem;
-       height: 0.4rem;
-       background: #C48E26;
+       height: 0.41rem;
        border-radius: 50%;
        margin-left: 0.22rem;
    }

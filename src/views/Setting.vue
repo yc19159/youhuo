@@ -4,20 +4,20 @@
        <p class="title">设置</p>
        <div class="modify">
            <p class="tx-p">修改密码</p>
-           <img src="" class="more" alt="">
+           <img src="../assets/image/more.png" class="more" alt="">
        </div>
        <div class="address">
            <p class="nick">地址管理</p>
-            <img src="" class="more" alt="">
+            <img src="../assets/image/more.png" class="more" alt="">
        </div>
        <div class="aboutUs">
              <p class="hy-title">关于我们</p>
-            <img src="" class="more" alt="">
+            <img src="../assets/image/more.png" class="more" alt="">
              <span class="hy-level">1.1.0</span>
        </div>
         <div class="loginOut">
              <p class="loginOut-title">退出登录</p>
-             <img src="" class="more" alt="">
+             <img src="../assets/image/more.png" class="more" alt="">
             
        </div>
     </div>
@@ -64,8 +64,7 @@ export default {
      width: 0.08rem;
      height: 0.12rem;
      float: right;
-     background: grey;
-     margin-top: 0.22rem;
+     margin-top: 0.2rem;
    }
  .modify,.address, .aboutUs, .loginOut{
   width: 3.43rem;

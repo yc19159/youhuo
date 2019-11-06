@@ -31,8 +31,8 @@ Vue.use(Card);
 Vue.use(Sku);
 Vue.use(Vant);
 Vue.use(ElementUI);
-// import axios from "@/utils/axios.js";
-import axios from "axios";
+import axios from "@/utils/axios.js";
+// import axios from "axios";
 
 Vue.prototype.$axios = axios;    // this==> Vue.prototype  this.$axios ==> axios ;
 

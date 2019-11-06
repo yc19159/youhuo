@@ -3,30 +3,14 @@
         <Head ></Head>
         <van-address-edit
   :area-list="areaList"
-  show-postal
-  show-delete
-  show-set-default
-  show-search-result
+   show-search-result
   @save="onSave"
-  @delete="onDelete"
-
 />
     </div>
 </template>
 
 <script>
-// window.onload=function () {
-//    var postal=document.getElementsByClassName('van-cell')[6];
-//         var moren=document.getElementsByClassName('van-cell')[7];
-//         var cancel=document.getElementsByClassName('van-picker__cancel')[0];
-//         var confirm=document.getElementsByClassName('van-picker__confirm')[0];
-//             postal.style.display="none";
-//              moren.style.display="none";
-//             cancel.style.backgroundColor='white';
-//              cancel.style.border='white';
-//               confirm.style.backgroundColor='white';
-//              confirm.style.border='white';
-// }
+
 import {mapState,mapMutations} from "vuex";
 import Head from '@/components/Head.vue';
 export default {
@@ -3840,14 +3824,9 @@ export default {
   mounted(){
     this.changeSearch(false);
     function unshow() {
-        var postal=document.getElementsByClassName('van-cell')[5];
-        console.log(postal)
-        var moren=document.getElementsByClassName('van-cell')[6];
-        console.log(moren)
+    
         var cancel=document.getElementsByClassName('van-picker__cancel')[0];
         var confirm=document.getElementsByClassName('van-picker__confirm')[0];
-            postal.style.display="none";
-             moren.style.display="none";
             cancel.style.backgroundColor='white';
              cancel.style.border='white';
               confirm.style.backgroundColor='white';
@@ -3867,16 +3846,28 @@ export default {
      var address2=document.getElementsByClassName('van-field__control')[3].value;
 
     var address=address1+address2
-     console.log(address)
-            this.$axios.post('/vue/setaddress',{
-              username:sessionStorage.username,
-              name,
-              tel,
-              address
-            }).then(res=>{
-              // console.log(res.data)
-              this.$router.push({name:"jiesuan"})
-            })
+     console.log(address1.split('/'))
+     if(address1.split('/').length==3){
+       var province=address1.split('/')[0];
+       var city=address1.split('/')[1];
+       var county=address1.split('/')[2];
+     }
+     if(address1.split('/').length==2){
+       var province='';
+       var city=address1.split('/')[0];
+       var county=address1.split('/')[1];
+     }
+     console.log(province)
+     console.log(city)
+            // this.$axios.post('/vue/setaddress',{
+            //   username:sessionStorage.username,
+            //   name,
+            //   tel,
+            //   address
+            // }).then(res=>{
+            //   // console.log(res.data)
+            //   this.$router.push({name:"jiesuan"})
+            // })
     },
     onDelete() {
       

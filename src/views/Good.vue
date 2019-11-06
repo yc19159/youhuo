@@ -224,6 +224,7 @@ export default {
           },
  
         paynow(){
+          location.href="https://chat.mqimg.com/dist/standalone.html?eid=173987&agentid=81117ee5efcbf5936481c8fae1d02bfd"
           console.log(this.$route.params)
           // if(username){
    document.getElementsByClassName('goods-right-picker')[0].style.display="block";

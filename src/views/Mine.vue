@@ -53,8 +53,10 @@
        </div>
 
       <div class="vipdiv">
+       <div class="vipdiv-left">
 
-
+       </div>
+       <button class="vipdiv-right">点击抢购</button>
       </div>
                </div>
       </div>
@@ -179,11 +181,15 @@ export default {
         // } 
     },
     mounted() {
-        var username=sessionStorage.username;
-        if(username){
-            this.isLogin=true;
-            this.username=username
-        };
+        // var username=sessionStorage.username;
+        // if(username){
+        //     this.isLogin=true;
+        //     this.username=username
+        // };
+       
+        this.$axios.post("http://192.168.0.18:8080/wx/user/info").then(res=>{
+            console.log(res)
+        })
          
     },
   
@@ -288,10 +294,12 @@ export default {
 }
 .consume .vipdiv{
     width: 100%;
-    height: 0.6rem;
+    height: 0.6rem; 
     border-radius: 0.12rem;
-    background:url("../assets/image/mine_bg.png") no-repeat;
-    background-size:cover;
+    /* background:url("../assets/image/mine_bg.png") 0.1rem -0.4rem no-repeat; */
+    background:url("../assets/image/mine_bg.png") 0 0  no-repeat;
+    /* background-size:3.75rem 2.7rem; */
+    background-size:100%;
     margin-top: 0.15rem;
 }
 .bg-myorder{
@@ -323,6 +331,7 @@ margin-top: 0.15rem;
  font-size: 0.12rem;
  margin-left: 2.46rem;
  width: 0.5rem;
+ color: black;
 }
 .allorder .more{
   float: right;

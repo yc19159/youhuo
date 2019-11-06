@@ -376,7 +376,7 @@ margin-left: 0.43rem;
       font-size: 0.12rem;
       padding: 0.03rem;
       float: left;
-      margin-top: 0;
+      padding-top: 0.03rem;
       margin-left: 0.14rem;
       margin-top: 0.03rem;
   }

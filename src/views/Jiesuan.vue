@@ -55,7 +55,8 @@
                   <img src="../assets/image/jiesuan_wenhao.png" class="wenhao" alt="">
                  <span class="carrier-p sp3">运险费</span>
                  <span class="return">退换货可赔付</span>
-                 <img src="../assets/image/jiesuan_choose.png" class="choose" alt="">
+                 <img src="../assets/image/jiesuan_choose.png" class="choose" alt="" ref="img"
+                  @click="changeChoose">
                  <span class="carrier-arrive">￥10.00</span>
              </div>
               <div class="liuyan">
@@ -88,14 +89,14 @@
              <p class="paynum" >￥<span :style="{'font-size':'0.38rem'}">
                  999.<span :style="{'font-size':'0.22rem'}">00</span> </span> </p>
                  <div class="zifubao">
-                      <img src="../assets/image/zhifubao.png" alt="">
+                      <img src="../assets/image/zhifubao.png" alt="" class="zhifubaoImg">
                       <span class="zfb-text">支付宝支付</span>
-                      <img src="../assets/image/jiesuan_unchoose.png" alt="" class="zfb-check">
+                      <img src="../assets/image/jiesuan_choose.png" @click="changePay"  ref="zhifubaoImg" alt="" id="chooseImg">
                  </div>
                    <div class="weixin">
-                       <img src="../assets/image/weixin.png" alt="">
+                      <img src="../assets/image/weixin.png" alt="" class="weixinImg">
                       <span class="wx-text">微信支付</span>
-                      <img src="../assets/image/jiesuan_choose.png" alt="" class="wx-check">
+                      <img src="../assets/image/jiesuan_unchoose.png" alt="" @click="changePaySec"  ref="weixinImg" id="unChooseImg">
                  </div>
                  <button class="pay-sure" @click="paySure">确认支付</button>
           </div>
@@ -110,6 +111,9 @@
 //  console.log( sessionStorage.goodId)
 import {mapState,mapMutations} from "vuex";
 import Head from "@/components/Head.vue";
+import ChooseImg from "@/assets/image/jiesuan_choose.png";
+import UnChooseImg from "@/assets/image/jiesuan_unchoose.png";
+
 export default {
     data(){
         return{
@@ -122,6 +126,9 @@ export default {
     },
    components:{
        Head,
+   },
+   computed: {
+        
    },
      methods: {
          ...mapMutations(['changeSearch']),
@@ -141,8 +148,37 @@ export default {
          },
          onEdit(){
         //   addaddress
-          this.$router.push({name:"addressedit"})
+          this.location.href="addaddress"
               },
+        changeChoose(){
+             if(this.$refs.img.className=="choose"){
+                 
+                 this.$refs.img.src=UnChooseImg;
+                 this.$refs.img.className="unchoose"
+                
+             }else{
+    
+                 this.$refs.img.src=ChooseImg;
+                 this.$refs.img.className="choose"
+             }
+        },
+        changePay(){
+             if(this.$refs.weixinImg.id=="chooseImg"){
+                 this.$refs.zhifubaoImg.src=ChooseImg;
+                 this.$refs.zhifubaoImg.id="chooseImg"
+                 this.$refs.weixinImg.src=UnChooseImg;
+                 this.$refs.weixinImg.id="unChooseImg"
+             }
+        },
+        changePaySec(){
+              if(this.$refs.zhifubaoImg.id=="chooseImg"){
+                 this.$refs.zhifubaoImg.src=UnChooseImg;
+                 this.$refs.zhifubaoImg.id="unChooseImg"
+                 this.$refs.weixinImg.src=ChooseImg;
+                  this.$refs.weixinImg.id="chooseImg"
+             }
+        },
+
         onSubmit(){
             var username=sessionStorage.username;
             var goodId=this.good.goodId
@@ -246,7 +282,7 @@ export default {
   .sp1{
       color: #FD9828;
       font-size: 0.12rem;
-      margin-top: 0.2rem;
+      padding-top: 0.03rem;
       float: left;
       margin-top: 0;
   }
@@ -344,6 +380,13 @@ export default {
          margin-left: 0.27rem;
      }
       .choose{
+          width: 0.15rem;
+          height: 0.15rem;
+          float: right;
+      }
+      .unchoose{
+           width: 0.15rem;
+          height: 0.15rem;
           float: right;
       }
       .carrier-arrive{
@@ -482,7 +525,7 @@ export default {
           height: 0.3rem;
           line-height: 0.3rem;
           margin-top: 0.3rem;
-          img{
+          .zhifubaoImg{
               width: 0.3rem;
               height: 0.3rem;
               border-radius: 50%;
@@ -491,39 +534,24 @@ export default {
           }
           .zfb-text{
                   margin-left: 0.12rem;
-              }
-          .zfb-check{
-              width: 0.15rem;
-              height: 0.15rem;
-              border-radius: 50%;
-              float: right;
-              margin-top: 0.07rem;
+              }   
           }
-      }
       .weixin{
           width: 100%;
           height: 0.3rem;
           line-height: 0.3rem;
           margin-top: 0.3rem;
-          img{
+          .weixinImg{
               width: 0.3rem;
               height: 0.3rem;
               border-radius: 50%;
               float: left;
-              
           }
           .wx-text{
                   margin-left: 0.12rem;
               }
-          .wx-check{
-              width: 0.15rem;
-              height: 0.15rem;
-            //   border: 1px solid grey;
-              border-radius: 50%;
-              float: right;
-              margin-top: 0.07rem;
-          }
-      }
+              }
+      
     .pay-sure{
         width: 3.43rem;
         height: 0.44rem;
@@ -541,6 +569,21 @@ export default {
     }
   }
 }
+ #unChooseImg{
+              width: 0.15rem;
+              height: 0.15rem;
+
+              border-radius: 50%;
+              float: right;
+              margin-top: 0.07rem;
+          }
+ #chooseImg{
+              width: 0.15rem;
+              height: 0.15rem;
+              border-radius: 50%;
+              float: right;
+              margin-top: 0.07rem;
+          }
 .content .store{
         height: 0.2rem;
         margin-top: 0.2rem;

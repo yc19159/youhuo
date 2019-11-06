@@ -3,17 +3,17 @@
         <Head ></Head> 
        <p class="title">选择收货地址</p>
        <div class="addressManage">
-             <div class="address">
+             <div class="address" v-for="(item, i) in list" :key="i">
                  <div class="address-default">
-                   <span class="username">小橙子</span> 
-                   <span class="usertel">18834568888</span>
+                   <span class="username">{{item.name}}</span> 
+                   <span class="usertel">{{item.tel}}</span>
                 </div>
      <div class="address-d" >
-        <p class="address-detail">请编辑地址请编辑地址请编辑地址</p>
+        <p class="address-detail">{{item.address+item.addressDetail}}</p>
     </div>
 
     <button class="edit" @click="gotoAddaddress">编辑</button>
-    <button class="delete">删除</button>
+
              </div>
              
        </div>
@@ -28,7 +28,7 @@ import Head from '@/components/Head.vue'
 export default {
     data() {
         return {
-            
+            list:[],
         }
     },
     components:{
@@ -39,6 +39,10 @@ export default {
    },
     mounted() {
         this.changeSearch(false);
+        this.$axios.post("http://192.168.0.18:8080/wx/address/list").then(res=>{
+            console.log(res.data.data.list)
+            this.list=res.data.data.list;
+        })
     },
     methods: {
         ...mapMutations(['changeSearch']),

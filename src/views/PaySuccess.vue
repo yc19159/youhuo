@@ -379,7 +379,7 @@ margin-left: 0.43rem;
     .sp1{
       color: #FD9828;
       font-size: 0.12rem;
-      margin-top: 0.2rem;
+      padding-top: 0.03rem;
       float: left;
       margin-top: 0;
       margin-left: 0.18rem;

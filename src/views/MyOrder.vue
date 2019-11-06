@@ -75,8 +75,11 @@ export default {
          ...mapState(['searchShow']),
     },
     mounted() {
-        
          this.changeSearch(true);
+         this.$axios.post("http://192.168.0.18:8080/wx/order/listSearch",{
+             showType:"待付款",
+             page: 1,
+         })
     },
 }
 </script>

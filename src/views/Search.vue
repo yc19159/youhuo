@@ -178,7 +178,15 @@ export default {
         smallDay.style.color='black';
       }
    
-    }
+    },
+    this.$axios.get("http://192.168.0.17:8080/wx/brand/list",{
+      params:{
+        id:1006002,
+        userId: 12 ,
+      }
+    }).then(res=>{
+      console.log(res)
+    })
   },
 }
 </script>

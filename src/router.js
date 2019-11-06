@@ -14,7 +14,7 @@ export default new VueRouter({
       component: Home
     },
     {
-      path: '/search',
+      path: '/search/:typeId',
       name: 'search',
       component: Search
     },

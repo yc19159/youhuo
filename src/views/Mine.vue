@@ -54,7 +54,8 @@
 
       <div class="vipdiv">
        <div class="vipdiv-left">
-
+           <p class="vipdiv-title">VIP权益卡</p>
+           <p class="vipdiv-save">花0.85/每天，预计省<span :style="{color:'#95862D'}">2500</span> /每年</p>
        </div>
        <button class="vipdiv-right">点击抢购</button>
       </div>
@@ -296,11 +297,32 @@ export default {
     width: 100%;
     height: 0.6rem; 
     border-radius: 0.12rem;
-    /* background:url("../assets/image/mine_bg.png") 0.1rem -0.4rem no-repeat; */
     background:url("../assets/image/mine_bg.png") 0 0  no-repeat;
-    /* background-size:3.75rem 2.7rem; */
     background-size:100%;
     margin-top: 0.15rem;
+}
+.vipdiv .vipdiv-left{
+    float: left;
+    margin-left: 0.2rem;
+}
+.vipdiv .vipdiv-left .vipdiv-title{
+    font-size: 0.17rem;
+    color: white;
+    margin-top: 0.1rem;
+}
+.vipdiv .vipdiv-left .vipdiv-save{
+    font-size: 0.12rem;
+    margin-top: 0.05rem;
+}
+.vipdiv .vipdiv-right{
+    float: right;
+    border: 0;
+    background: #F5F6FA;
+    font-size: 0.13rem;
+    padding: 0.06rem 0.17rem;
+    border-radius: 0.14rem;
+    margin-top: 0.15rem;
+    margin-right: 0.25rem;
 }
 .bg-myorder{
     width: 3.43rem;

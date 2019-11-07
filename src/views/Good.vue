@@ -224,6 +224,7 @@ export default {
           },
  
         paynow(){
+          // location.href="https://chat.mqimg.com/dist/standalone.html?eid=173987&agentid=81117ee5efcbf5936481c8fae1d02bfd"
           console.log(this.$route.params)
           // if(username){
    document.getElementsByClassName('goods-right-picker')[0].style.display="block";
@@ -239,25 +240,27 @@ export default {
         }
     },
     mounted(){
-       this.changeSearch(false);
-       document.onclick=function(e){
-       var event=e||event;
-       var target=event.targrt||event.srcElement;
-       if(target.className!=='detail'&&target.className=='goods-right-picker'){
- document.getElementsByClassName('goods-right-picker')[0].style.display="none"; 
-      }
-       };
-        this.$axios.get('http://182.92.4.245:1906/vue/getallGoods',{
-        params:{goodId:this.$route.params.goodId,}
+//        this.changeSearch(false);
+//        document.onclick=function(e){
+//        var event=e||event;
+//        var target=event.targrt||event.srcElement;
+//        if(target.className!=='detail'&&target.className=='goods-right-picker'){
+//  document.getElementsByClassName('goods-right-picker')[0].style.display="none"; 
+//       }
+//        };
+     console.log(this.$route.params.goodId)
+        this.$axios.get('http://192.168.0.17:8080/wx/goods/detail',{
+        params:{id:1017000,
+               userId:"123"}
         }).then(res=>{
-        this.detail=res.data.result;
+        console.log(res.data)
         })
-        this.$axios.post("/vue/getShopcarInfo",{
-      username:sessionStorage.username,
-  }).then(res=>{
-      this.total = res.data.total;
+  //       this.$axios.post("/vue/getShopcarInfo",{
+  //     username:sessionStorage.username,
+  // }).then(res=>{
+      // this.total = res.data.total;
     //  this.getTotal(res.data.total)
-  })
+  // })
       
     },
    

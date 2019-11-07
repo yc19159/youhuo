@@ -17,7 +17,7 @@ export default new VueRouter({
       component: Home
     },
     {
-      path: '/search',
+      path: '/search/:typeId',
       name: 'search',
       component: Search
     },
@@ -98,7 +98,7 @@ export default new VueRouter({
       component: ()=>import('@/views/Setting'),
     },
     {
-      path: '/resetpwd',
+      path: '/resetpwd',redirect:"/resetpwd",
       name: 'resetpwd',
       component: ()=>import('@/views/ResetPwd'),
     },{

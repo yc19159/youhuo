@@ -102,7 +102,7 @@ export default {
                  this.$notify({message:'请输入正确的手机号', color: 'black',background: '#FF4444'});
               }
              }else{
-                this.$notify({message: '请输入长度为2-8位的用户名', color: 'black',background: '#FF4444'});
+                this.$notify({message: '请输入长度为2-8位的用户名(请勿使用特殊字符)', color: 'black',background: '#FF4444'});
              }
        },
        todoLogin(){
@@ -179,7 +179,7 @@ export default {
               }
             }else{
             //  tishi.innerHTML="请输入长度为2-6位的用户名"
-            this.$notify({message: '请输入长度为2-8位的用户名', color: 'black',background: '#FF4444'});
+            this.$notify({message: '请输入长度为2-8位的用户名(请勿使用特殊字符)', color: 'black',background: '#FF4444'});
             }
        
        

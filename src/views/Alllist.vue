@@ -48,9 +48,12 @@
          <li ><p></p>
         <span class="phoneType">苹果</span></li>
       </ul></el-tab-pane>
-    <el-tab-pane label="家居家电"><ul class="listUl">
-         <li ><p></p>
-        <span class="phoneType">苹果</span></li>
+    <el-tab-pane label="家居家电" class="jiadian">
+      <ul class="listUl" v-for="(item , i) in list" :key="i">
+         <li ><p>  <router-link
+            :to="{name:'search',params:{typeId:item.id}}"> <img :src="item.iconUrl" alt="" class="jiadianImg"> 
+            </router-link></p>
+        <span class="phoneType">{{item.name}}</span></li>
       </ul></el-tab-pane>
     <el-tab-pane label="办公设备"><ul class="listUl">
          <li ><p></p>
@@ -78,6 +81,7 @@ export default {
     return {
       // active: 2
       tabPosition: 'left',
+      list: [],
     };
   },
   components:{
@@ -110,6 +114,14 @@ export default {
     //  this.active=this.$route.params.active;
      console.log(this.active)
       // alert(this.actice)
+      this.$axios.get("http://192.168.0.17:8080/wx/goods/category",{
+        params:{
+          id:"1005000",
+        }
+      }).then(res=>{
+        this.list=res.data.data.brotherCategory
+        console.log(this.list)
+      })
      
   },
 }
@@ -172,7 +184,12 @@ position: relative;
   margin: auto;
   width: 0.7rem;
   height: 0.7rem;
-  border: 1px solid;
+}
+.listUl li p .jiadianImg{
+  width: 0.44rem;
+  height: 0.44rem;
+  margin-left: 0.13rem;
+  padding-top: 0.13rem;
 }
 .listUl li .phoneType{
   display: inline-block;
@@ -182,5 +199,11 @@ position: relative;
   font-family: "PingFangSC-Regular";
   font-size: 13px;
   color: #2F3031;
+}
+.el-tabs--left /deep/.jiadian .listUl li .img{
+  width: 0.44rem;
+  height: 0.44rem;
+  margin-left: 0.13rem;
+  margin-top: 0.13rem;
 }
 </style>

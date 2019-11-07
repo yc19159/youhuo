@@ -2,10 +2,10 @@
 
 import axios from "axios";
 
-let AUTH_TOKEN = "";
+let AUTH_TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0aGlzIGlzIGxpdGVtYWxsIHRva2VuIiwiYXVkIjoiTUlOSUFQUCIsImlzcyI6IkxJVEVNQUxMIiwidXNlcklkIjoyLCJpYXQiOjE1NzEzODM0NTV9.Bd8k6nLAJpUm114pzoFK5Zeekeb59kJKYA-Ja9HkrrU";
 
 // axios.defaults.baseURL = "http://182.92.4.245"; // 基路径   
-axios.defaults.headers.common['token'] = AUTH_TOKEN;    // token 
+axios.defaults.headers.common['X-Litemall-Token'] = AUTH_TOKEN;    // token 
 // axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
 
 
@@ -51,10 +51,10 @@ axios.interceptors.response.use(function (response) {
     // console.log(response);
     setTimeout(()=>{
         Toast.clear();
-        Toast({
-            message:response.data.msg,
-            duration:400
-        });
+        // Toast({
+        //     message:response.data.errmsg,
+        //     duration:400
+        // });
         if(response.data.code=="500"){
             router.push({
                 name:"login",

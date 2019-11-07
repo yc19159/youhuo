@@ -1,7 +1,7 @@
 <template>
     <!-- <div id="photo"> -->
         <div>
-        <img :src="touxiang" alt="上传头像" @click="uploadImg"  class="userImg">
+        <img :src="touxiang" alt="上传头像" @click="uploadImg"  class="userImg" ref="touxiang">
         <input @change="shangchuan" type="file" ref="upload" accept="image/*" class="hiddenInput">
         
     </div>
@@ -50,24 +50,24 @@ export default {
             let data = new FormData() ;  // 新建 表单对象  
            
            
-            data.append(file);
-            console.log(data.file)
+            data.append('file',file);
+            console.log(data)
             // isPicFile(file)
             // let data={
 
             //     file: file,
             // }
             this.$axios({
-                url:"http://192.168.0.23:8080/wx/user/uploadAvatar",
+                url:"http://192.168.0.18:8080/wx/user/uploadAvatar",
                 method:"POST",
                 data:data,
-                headers:{"X-Litemall-Token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0aGlzIGlzIGxpdGVtYWxsIHRva2VuIiwiYXVkIjoiTUlOSUFQUCIsImlzcyI6IkxJVEVNQUxMIiwidXNlcklkIjoyLCJpYXQiOjE1NzEzODM0NTV9.Bd8k6nLAJpUm114pzoFK5Zeekeb59kJKYA-Ja9HkrrU"},
-               
+                // contentType:false,
+                // processData:false,
             }).then(res=>{
                 //  this.touxiang = res.data.pic.replace(/public/,'');   // 配置代理 
-                console.log(res.errmsg);
-                this.touxiang = res.data.pic.replace(/public/,'http://192.168.0.24:8080');  //不需要配置代理 
-                localStorage.avatar = this.touxiang;
+                console.log(res);
+                // this.touxiang = res.data.pic.replace(/public/,'http://192.168.0.24:8080');  //不需要配置代理 
+                // localStorage.avatar = this.touxiang;
             })
 
             // processData: false,//默认情况下，通过data选项传递进来的数据，如果是一个对象(技术上讲只要不是字符串)，都会处理转化成一个查询字符串，以配合默认内容类型 "application/x-www-form-urlencoded"。如果要发送 DOM 树信息或其它不希望转换的信息，请设置为 false。
@@ -81,24 +81,35 @@ export default {
         //     // 使用默认 
         //     this.touxiang = require("@/assets/images/img4.jpg");
         // }
-         let username = "";
-        if(sessionStorage.username){
-            username = sessionStorage.username;
-        }
-        if(username){
-            this.$axios.post("/vue/getAvatar",{
-                username
-            }).then(res=>{
-                  if(!!res.data.type){
-                      this.touxiang = res.data.avatar.replace(/public/,'http://182.92.4.245:1906');
+        this.$axios.post("http://192.168.0.18:8080/wx/user/info").then(res=>{
+            console.log(res.data.data.avatarUrl)
+                  if(res.data.data.avatarUrl){
+                      this.touxiang = "http://192.168.0.18:8080/zubei/users/img/9a0be563-2daf-4391-b2a3-27485e251849.jpg";
+                    //   this.$refs.touxiang.src= "http://192.168.0.18:8080/zubei/users/img/9a0be563-2daf-4391-b2a3-27485e251849.jpg";
                       console.log(this.touxiang);
                   }else{
                       this.touxiang = require("@/assets/image/touxiang.jpg");
                   }
             })
-        }else{
-            this.touxiang = require("@/assets/image/touxiang.jpg");
-        }
+        //  let username = "";
+        // if(sessionStorage.username){
+        //     username = sessionStorage.username;
+        // }
+        // if(username){
+        //     this.$axios.post("/vue/getAvatar",{
+        //         username
+        //     }).then(res=>{
+        //           if(!!res.data.type){
+        //             //   this.touxiang = res.data.avatar.replace(/public/,'http://182.92.4.245:1906');
+                    
+        //               console.log(this.touxiang);
+        //           }else{
+        //               this.touxiang = require("@/assets/image/touxiang.jpg");
+        //           }
+        //     })
+        // }else{
+        //     this.touxiang = require("@/assets/image/touxiang.jpg");
+        // }
     }
 }
 </script>

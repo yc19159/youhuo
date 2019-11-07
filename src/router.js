@@ -3,6 +3,9 @@ import VueRouter from 'vue-router'
 import Home from './views/Home.vue'
 import Search from './views/Search.vue'
 
+
+
+
 Vue.use(VueRouter)
 
 export default new VueRouter({
@@ -123,5 +126,6 @@ export default new VueRouter({
       name: 'vipmember',
       component: ()=> import('@/views/VipMember.vue'),
     },
+    
   ]
 })

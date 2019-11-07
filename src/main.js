@@ -11,6 +11,8 @@ import Vant from "vant";
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 
+
+
 import { Sku } from 'vant';
 import { Card } from 'vant';
 import { Swipe, SwipeItem } from 'vant';
@@ -31,6 +33,12 @@ Vue.use(Card);
 Vue.use(Sku);
 Vue.use(Vant);
 Vue.use(ElementUI);
+
+
+
+
+
+
 // import axios from "@/utils/axios.js";
 import axios from "axios";
 

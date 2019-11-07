@@ -3,18 +3,22 @@
         <Head ></Head> 
        <p class="title">选择收货地址</p>
        <div class="addressManage">
-             <div class="address">
+           <!-- 渲染用户地址 -->
+           <!-- 当前页面模拟滑动删除 -->
+            <div class="address"
+                 v-for="(item,index) in addressList">
                  <div class="address-default">
-                   <span class="username">小橙子</span> 
-                   <span class="usertel">18834568888</span>
+                   <span class="username">{{item.name}}</span> 
+                   <span class="usertel">{{item.phone}}</span>
+                 </div>
+                <div class="address-d" >
+                     <p class="address-detail">{{item.address}}</p>
                 </div>
-     <div class="address-d" >
-        <p class="address-detail">请编辑地址请编辑地址请编辑地址</p>
-    </div>
 
-    <button class="edit" @click="gotoAddaddress">编辑</button>
-    <button class="delete">删除</button>
-             </div>
+                <button class="edit" @click="gotoAddaddress">编辑</button>
+                <button class="delete">删除</button>
+            </div>
+           
              
        </div>
         
@@ -28,7 +32,11 @@ import Head from '@/components/Head.vue'
 export default {
     data() {
         return {
-            
+            addressList:[
+                {name:'小橙子',phone:'18834568888',address:'请编辑地址请编辑地址'},
+                {name:'小橙子2',phone:'18834568888',address:'请编辑地址请编辑地址'},
+                {name:'小橙子3',phone:'18834568888',address:'请编辑地址请编辑地址'},
+            ]
         }
     },
     components:{

@@ -3,9 +3,9 @@
        <Head></Head>
        <!-- <input type="text" class=" searchInput" > -->
        <van-tabs v-model="active">
-  <van-tab title="价格">
-    <div class="price">
-      <ul class="glist">
+           <van-tab title="价格">
+              <div class="price">
+            <ul class="glist">
        <li class="glist-item" @click="drawer = true">
           <img src="../assets/image/a.png" class="glist-img"/>
           <p class="phont-type">S 01</p>
@@ -39,32 +39,29 @@
 
           </li>
       </ul>
-    </div> 
-    </van-tab>
-  <van-tab title="销量 ">  <div class="price">
-      <ul class="glist">
-        <li class="glist-item" @click="drawer = true">
-          
-        </li>
-         <li class="glist-item">
-          
-         </li>
-          <li class="glist-item">
-           
-          </li>
-          <li class="glist-item">
-           
-          </li>
-      </ul>
-    </div> </van-tab>
-  <van-tab title="筛选">内容 3</van-tab>
- 
-</van-tabs>
-<el-drawer
-  title=""
-  :visible.sync="drawer"
-  :direction="direction"
-  
+              </div> 
+           </van-tab>
+           <van-tab title="销量 "> 
+           <div class="price">
+              <ul class="glist">
+                  <li class="glist-item" @click="drawer = true">
+                  </li>
+                  <li class="glist-item">
+                  </li>
+                  <li class="glist-item">   
+                  </li>
+                  <li class="glist-item">
+                  </li>
+              </ul>
+           </div>
+           </van-tab>
+           <van-tab title="筛选">内容 3</van-tab>
+       </van-tabs>
+       <el-drawer
+          title=""
+          :visible.sync="drawer"
+          :direction="direction"
+
   >
   <div class="alert-content">
       <div class="zujin ">
@@ -99,8 +96,8 @@
         <button class="sure">确定</button>
       </div>
   </div>
-</el-drawer>
- <!-- <ul>
+       </el-drawer>
+       <!-- <ul>
            <li class="glist-item" v-for="(list,keys) in goods " :key="keys">
                 <router-link
             :to="{name:'good',params:{goodId:list.goods_id}}">

@@ -12,11 +12,6 @@ import Vant from "vant";
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 
-
-<<<<<<< HEAD
-
-=======
->>>>>>> 6b47cbf7425fefb18d70ee18b44b460a9a0c2177
 import { Sku } from 'vant';
 import { Card } from 'vant';
 import { Swipe, SwipeItem } from 'vant';
@@ -39,19 +34,8 @@ Vue.use(Card);
 Vue.use(Sku);
 Vue.use(Vant);
 Vue.use(ElementUI);
-<<<<<<< HEAD
-
-
-
-
-
-
-// import axios from "@/utils/axios.js";
-import axios from "axios";
-=======
 import axios from "@/utils/axios.js";
 // import axios from "axios";
->>>>>>> 6b47cbf7425fefb18d70ee18b44b460a9a0c2177
 
 Vue.prototype.$axios = axios;    // this==> Vue.prototype  this.$axios ==> axios ;
 

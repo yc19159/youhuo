@@ -2,23 +2,27 @@
     <div class="main">
          <Head></Head>
          <div class="item">
-            <img 
-           :src="1"
-            alt="" class="item-img">
+           <van-swipe  indicator-color="white">
+             <van-swipe-item><img :src="detail.info.gallery[0]" alt="" class="item-img"></van-swipe-item>
+             <van-swipe-item><img :src="detail.info.gallery[1]" alt="" class="item-img"></van-swipe-item>
+             <van-swipe-item><img :src="detail.info.gallery[2]" alt="" class="item-img"></van-swipe-item>
+            
+</van-swipe>
+            
         </div>
        <div class="descript">
           <div class="descript-content">
                <div class="item-price">
-                 <span class="price-span">￥<span :style="{'font-size':'0.2rem'}">{9.99}</span>/天</span>   
+                 <span class="price-span">￥<span :style="{'font-size':'0.2rem'}">{{detail.info.retailPrice.toFixed(2)}}</span>/天</span>   
                  <span class="quanxin" :style="{color:'white','font-size':'0.13rem','line-height':'0.16rem',height:'0.16rem',
           'margin-left':'0.12rem','border-radius':'0.02rem',width:'0.32rem',
           'text-align':'center','margin-top':'0.05rem','font-weight':'normal',display:'block',float:'left'}" >全新</span>
            <span class="halfyear"> 半年起租</span>
                </div>
-               <p class="item-phone">Apple Iphone x11(A2322) 128Gb 黑色 移动联通电信4G手机 双卡双待</p>
+               <p class="item-phone">{{detail.info.name}}</p>
                <div class="sell">
                  <p class="sell-number">
-                   销量：XXX件
+                   销量：{{detail.info.number}}件
                  </p>
                  <p class="heiger-yajin">
                    最高押金：￥5000
@@ -39,50 +43,49 @@
                </div>
           </div>
        </div>
-       <div class="descript-sec">
+       <!-- <div class="descript-sec">
            <div class="descript-sec-content">
                  <div class="descript-sec-taocan">
                    <p :style="{'font-size':'0.14rem','font-family':'NSimSun','font-weight':'bold',
-                   width:'0.3rem',float:'left'}">套餐</p>
-                   <p :style="{width:'2.9rem',float:'right',height:'0.55rem',
-                  'box-sizing':'border-box','border-bottom':'1px solid #F5F6FA',
-                  'font-size':'0.13rem',color:'#2F3031'}">{IphoneX s64 全新无锁一年起租起租}
-                  <img src="../assets/image/more.png" class="more" alt=""></p>
-                  
-                 </div>
-                 <div class="descript-sec-maiduan">
-                 <p :style="{'font-size':'0.14rem','font-family':'NSimSun','font-weight':'bold',
-                   width:'0.75rem',float:'left'}">
-                   买断规则
-                 </p>
-                 <p :style="{width:'2.55rem',float:'right',height:'0.55rem',
-                  'box-sizing':'border-box','border-bottom':'1px solid #F5F6FA',
-                  'font-size':'0.13rem',color:'#2F3031'}">可<span :style="{color:'#D13717',
-                  'font-size':'0.14rem'}"> ￥7999.00 </span>买断
-                   <img src="../assets/image/more.png" class="more" alt=""></p>
-                 </div>
-           </div>
-       </div>
-        <div class="descript-third">
-           <div class="descript-third-content">
-                 <div class="descript-third-choose">
-                   <p :style="{'font-size':'0.14rem','font-family':'NSimSun','font-weight':'bold',
-                   width:'0.3rem',float:'left'}">选择</p>
+                   float:'left'}">套餐</p>
                    <p :style="{width:'2.9rem',float:'right',height:'0.53rem',
                   'box-sizing':'border-box','border-bottom':'1px solid #F5F6FA',
                   'font-size':'0.13rem',color:'#2F3031'}">{IphoneX s64 全新无锁一年起租起租}
                   <img src="../assets/image/more.png" class="more" alt=""></p>
                   
                  </div>
-                 <div class="descript-third-canshu">
-                 <p :style="{'font-size':'0.14rem','font-family':'NSimSun','font-weight':'bold',
-                   width:'0.3rem',float:'left'}">
-                   参数
+                 <div class="descript-sec-maiduan">
+                 <p :style="{'font-size':'0.14rem','font-weight':'bold',
+                 float:'left'}">
+                   买断
                  </p>
                  <p :style="{width:'2.9rem',float:'right',height:'0.53rem',
                   'box-sizing':'border-box','border-bottom':'1px solid #F5F6FA',
                   'font-size':'0.13rem',color:'#2F3031'}">可<span :style="{color:'#D13717',
                   'font-size':'0.14rem'}"> ￥7999.00 </span>买断
+                   <img src="../assets/image/more.png" class="more" alt=""></p>
+                 </div>
+           </div>
+       </div> -->
+        <div class="descript-third">
+           <div class="descript-third-content">
+                 <div class="descript-third-choose">
+                   <p :style="{'font-size':'0.14rem','font-family':'NSimSun','font-weight':'bold',
+                   float:'left'}">选择</p>
+                   <p :style="{width:'2.9rem',float:'right',height:'0.53rem',
+                  'box-sizing':'border-box','border-bottom':'1px solid #F5F6FA',
+                  'font-size':'0.13rem',color:'#2F3031'}" @click="choose">点击选择颜色，型号，
+                  <img src="../assets/image/more.png" class="more" alt=""></p>
+                  
+                 </div>
+                 <div class="descript-third-canshu">
+                 <p :style="{'font-size':'0.14rem','font-family':'NSimSun','font-weight':'bold',
+                   float:'left'}">
+                   参数
+                 </p>
+                 <p :style="{width:'2.9rem',float:'right',height:'0.53rem',
+                  'box-sizing':'border-box','border-bottom':'1px solid #F5F6FA',
+                  'font-size':'0.13rem',color:'#2F3031'}"  @click="choose">网络类型，品牌...
                    <img src="../assets/image/more.png" class="more" alt=""></p>
                  </div>
            </div>
@@ -99,9 +102,9 @@
        </div>
  
         <van-goods-action >
-  <van-goods-action-icon icon="shop-o" text="店铺" />
+  <van-goods-action-icon icon="shop-o" text="店铺" @click="toShop"/>
   <van-goods-action-icon icon="chat-o" text="客服"  />
-  <van-goods-action-icon icon="star-o" text="收藏"  />
+  <van-goods-action-icon icon="star-o" text="收藏"  @click="collectGoods"/>
 
   <van-goods-action-button type="danger" text="立即租"   @click="paynow" />
 </van-goods-action>
@@ -111,50 +114,42 @@
        <div class="detail">
           <div class="detail-content">
             <div class="d-content-top">
-                  <img src="" alt="">
-                    <span class="price-span">￥<span :style="{'font-size':'0.2rem'}">{9.99}</span>/天</span>   
+                  <img :src="detail.info.picUrl" alt="">
+                    <span class="price-span">￥
+                      <span v-if="price" :style="{'font-size':'0.2rem'}">{{price}}</span>
+                       <span v-else :style="{'font-size':'0.2rem'}">{{morenPrice}}</span>
+
+                      /天</span>   
                  <span class="quanxin" :style="{color:'white','font-size':'0.13rem','line-height':'0.16rem',height:'0.16rem',
           'margin-left':'0.12rem','border-radius':'0.02rem',width:'0.32rem',
           'text-align':'center','margin-top':'0.05rem','font-weight':'normal',display:'block',float:'left'
         ,'margin-top':'0.75rem'}">全新</span>
             </div>
-            <div class="d-content-color">
+            <div class="d-content-color" v-if="this.detail.specificationList[1]">
                 <p>颜色</p>
                 <ul>
-                  <li class="color-li">蓝色</li> 
-                  <li class="color-li">黑色</li>
-                  <li class="color-li">金色</li>
-                  <li class="color-li">红色</li>
-                  <li class="color-li">珊瑚色</li>
+                  <li class="color-li" v-for="(item , i) in this.detail.specificationList[1].valueList" 
+                  :key="i" @click="chooseColor(i)" :class="{active: isActiveIndex === i}" ref="chooseColor">{{item.value}}</li> 
+                  
                 </ul>
             </div>
               <div class="d-content-spec">
                 <p>规格</p>
                 <ul>
-                  <li class="spec-li">64GB</li> 
-                  <li class="spec-li">128GB</li>
-                  <li class="spec-li">256GB</li>
-               
+                  <li class="spec-li" v-for="(item , i) in this.detail.specificationList[0].valueList" 
+                  :key="i"  @click="chooseSize(i)" :class="{activeSize: isActiveIndexSize === i}" ref="size" >{{item.value}}</li> 
+                  
                 </ul>
             </div>
               <div class="d-content-day">
                 <p>租用天数</p>
                 <ul>
-                  <li class="day-li">半年</li> 
-                  <li class="day-li">一年</li>
-                  <li class="day-li">两年</li>
+                  <li class="day-li" v-for="(item , i) in this.detail.rentAndPrice" :key="i"
+                  @click="chooseDay(i)" :class="{active: isActiveIndexDay === i}">{{item.rentTime}}天</li> 
                
                 </ul>
             </div>
-            <div class="d-content-from">
-                <p>起租日期</p>
-                <ul>
-                  <li class="from-li">半年</li> 
-                  <li class="from-li">一年</li>
-                  <li class="from-li">两年</li>
-               
-                </ul>
-            </div>
+           
              <div class="d-content-num">
                 <p>数量</p>
                 <van-stepper v-model="value" />
@@ -174,19 +169,24 @@
 // console.log(sessionStorage.username)
 import Head from '@/components/Head.vue'
 import {mapState,mapMutations} from "vuex"
+import { Dialog } from 'vant';
 var username=sessionStorage.username;
 export default {
     data(){
         return{
             value:1,
-            show:true,
             detail:{},
-            flag:false,
-            count:1,
-            total:0,
-            num:5,
-            
- 
+            isActiveIndex: -1,
+            isActiveIndexSize:-1,
+            isActiveIndexDay:-1,
+            color:"",
+            size: "",
+            goodsStock:[],
+            stockId:"",
+            daysId: "",
+            price:"",
+            morenPrice:"",
+            totalPrice:"",
         }
     },
     components:{
@@ -197,47 +197,167 @@ export default {
     },
     methods: {
         ...mapMutations(['changeSearch']),
+        choose(){
+ document.getElementsByClassName('goods-right-picker')[0].style.display="block";
+        },
       
         close(){
    document.getElementsByClassName('goods-right-picker')[0].style.display="none";
         },
          confirm(){
-            //  console.log(this.value)
-              var count=this.value
-              
-              document.getElementsByClassName('goods-right-picker')[0].style.display="none"; 
-        //        this.$axios.post("/vue/addShopCar",{
-        //        username: sessionStorage.username,
-        //        goodId:this.$route.params.goodId,
-        //        count:count,
-        //        goodname:this.detail.goods_name,
-        //        goodimg: this.detail.thumb_url,
-        //        goodprice: this.detail.normal_price/100
-        // }).then(res=>{
-        //     this.total+=this.count
-             this.$router.push({name:"jiesuan"})    
-        // })
+              // var count=this.value
+              sessionStorage.count=this.value;
+              this.goodsStock=this.detail.productList
+              console.log(this.goodsStock)
+              document.getElementsByClassName('goods-right-picker')[0].style.display="none";
+             
+              // for(var i=0; i<this.goodsStock.length;i++){
+              //   this.goodsStock[i].specifications.join('');
+              //   if((this.goodsStock[i].specifications.join('')).indexOf(this.size+this.color)!="-1"){
+              //     console.log(this.goodsStock[i].indexOf(""))
+              //   }
+              // }
+              // document.getElementsByClassName('goods-right-picker')[0].style.display="none"; 
+         
           },
-          gotocart(){
-            this.$router.push({name:"cart"})
+          // 选择尺寸的同时判断是否存在库存
+       chooseColor(index){
            
-          },
- 
+         this.color=this.$refs.chooseColor[index].innerHTML;
+          this.goodsStock=this.detail.productList
+          // console.log( this.color)
+          // console.log(this.goodsStock)
+          for(var i=0; i<this.goodsStock.length;i++){
+            this.goodsStock[i].specifications.join('');
+            console.log(this.goodsStock[i].specifications.join('').indexOf(this.color))
+            if(this.goodsStock[i].specifications.join('').indexOf(this.color)!="-1"){
+             
+                if(this.size){
+                  if(this.goodsStock[i].specifications.join('').indexOf(this.size+this.color)!="-1"){
+                     console.log(this.goodsStock[i])
+                      if(this.goodsStock[i].number>0){
+                         this.isActiveIndex = index;
+                        console.log('有库存');
+                        this.stockId=this.goodsStock[i].id
+                        console.log(this.stockId);
+                      }else{
+                         Dialog({message:'此商品已没有库存'})
+                      }
+                  }
+                }else{
+                   console.log(this.goodsStock[i])
+                  this.isActiveIndex = index;
+                   this.stockId=this.goodsStock[i].id
+                }
+            }
+          }
+       },
+      //  判断库存
+       chooseSize(index){
+          
+        this.size=this.$refs.size[index].innerHTML;
+         console.log( this.size)
+          this.goodsStock=this.detail.productList
+          // console.log(this.goodsStock)
+          for(var i=0; i<this.goodsStock.length;i++){
+            this.goodsStock[i].specifications.join('');
+            console.log(this.goodsStock[i].specifications.join('').indexOf(this.color))
+            if(this.goodsStock[i].specifications.join('').indexOf(this.size)!="-1"){
+              // console.log(this.goodsStock[i])
+              if(this.color){
+                if(this.goodsStock[i].specifications.join('').indexOf(this.size+this.color)!="-1"){
+                     
+                        console.log(this.goodsStock[i])
+                        if(this.goodsStock[i].number>0){
+                          this.isActiveIndexSize = index;
+                          console.log('有库存');
+                          this.stockId=this.goodsStock[i].id;
+                          console.log(this.stockId);
+                        }else{
+                           Dialog({message:'此商品已没有库存'})
+                        }
+                }
+
+              }else{
+                if(this.goodsStock[i].number>0){
+                  this.isActiveIndexSize = index;
+                   this.stockId=this.goodsStock[i].id;
+                }else{
+                   Dialog({message:'此商品已没有库存'})
+                }
+                 console.log(this.stockId)
+              }
+            }
+          }
+       },
+       chooseDay(index){
+         this.isActiveIndexDay=index;
+         this.daysId=this.detail.rentAndPrice[index].id;
+         sessionStorage.rentId=this.daysId;
+         this.price=this.detail.rentAndPrice[index].rentMoney;
+         console.log(this.daysId);
+       },
         paynow(){
-          // location.href="https://chat.mqimg.com/dist/standalone.html?eid=173987&agentid=81117ee5efcbf5936481c8fae1d02bfd"
-          console.log(this.$route.params)
-          // if(username){
-   document.getElementsByClassName('goods-right-picker')[0].style.display="block";
-          // }else{
-          //   this.$router.push({name: "login"})
-          // }
+      //判断是否有颜色及规格
+        sessionStorage.stockId=this.stockId;
+        sessionStorage.size=this.size;
+        sessionStorage.color=this.color;
+        
+         if(this.detail.specificationList[1]){
+            if(!this.color||!this.size){
+               Dialog({message:'请选择颜色或规格'})
+            
+            }else{
+               this.$axios.get('/order/goPay',{params:{
+                 userId:localStorage.token,
+                 id:this.$route.params.goodId,
+                 productId:this.stockId,
+                 rentId:this.daysId,
+                 number:this.value,
+               }}).then(res=>{
+                 console.log(res)
+                 this.totalPrice=res.data.data.totalPrice;
+                 
+
+               })
+              // location.href="/#/jiesuan/"+this.$route.params.goodId
+              this.$router.push({name:'jiesuan',params:{goodId:this.$route.params.goodId}})
+            }
+         }else{
+           if(!this.size){
+              Dialog({message:'请选择规格'})
+           }else{
+              this.$axios.get('/order/goPay',{params:{
+                 userId:localStorage.token,
+                 id:this.$route.params.goodId,
+                 productId:this.stockId,
+                 rentId:this.daysId,
+                 number:this.value,
+               }}).then(res=>{
+                 console.log(res)
+                 this.totalPrice=res.data.data.totalPrice;
+                 sessionStorage.totalPrice=this.totalPrice;
+                  sessionStorage.totalPrice=this.totalPrice;
+                   this.$router.push({name:'jiesuan',params:{goodId:this.$route.params.goodId}})
+               })
+                
+           }
+         }
+      // console.log(this.$route.params)
         },
-        confirmbuy(){
-          sessionStorage.count=this.value;
-            // this.$router.push({name:"pay"})
-            sessionStorage.goodId=this.$route.params.goodId;
-       this.$router.push({name:"jiesuan"})
+        collectGoods(){
+           this.$axios.post('/collect/addordelete',{
+             userId: localStorage.token,
+             valueId: this.$route.params.goodId,
+             type:0,
+           }).then(res=>{
+             console.log(res)
+           })
+        },
+        toShop(){
+          this.$router.push({name: 'dianpu',params:{shopId:this.detail.info.shopId} })
         }
+      
     },
     mounted(){
 //        this.changeSearch(false);
@@ -249,11 +369,15 @@ export default {
 //       }
 //        };
      console.log(this.$route.params.goodId)
-        this.$axios.get('http://192.168.0.17:8080/wx/goods/detail',{
-        params:{id:1017000,
-               userId:"123"}
+        this.$axios.get('/goods/detail',{
+        params:{id:this.$route.params.goodId,
+               userId: localStorage.token}
         }).then(res=>{
-        console.log(res.data)
+          this.detail=res.data.data
+          console.log(res.data.data)
+          this.morenPrice=this.detail.rentAndPrice[0].rentMoney;
+          
+          
         })
   //       this.$axios.post("/vue/getShopcarInfo",{
   //     username:sessionStorage.username,
@@ -267,6 +391,7 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+
 .main{
   width: 100%;
   height:auto;
@@ -280,9 +405,13 @@ export default {
   width: 100%;
  height: 3.5rem;
  overflow: hidden;
+ background: -webkit-linear-gradient(to bottom, white, #F5F6FA) !important;
+    background: -o-linear-gradient(to bottom, white, #F5F6FA) !important;
+    background: -moz-linear-gradient(to bottom, white, #F5F6FA) !important;
+    background: linear-gradient(to bottom, white, #F5F6FA) !important;
 }
 .item-img {
- width: 1.92rem;
+ width: 3.5rem;
  height: 2.64rem;
  margin: auto;
 margin-top: 0.43rem
@@ -326,8 +455,8 @@ overflow: hidden;
    line-height: 0.32rem;
  }
  .item-phone{
-   margin-top: 0.07rem;
-   font-size: 0.15rem;
+   margin-top: 0.1rem;
+   font-size: 0.17rem;
    line-height: 0.24rem;
    font-family: 'NSimSun';
   //  font-family: '微软雅黑';
@@ -407,7 +536,7 @@ overflow: hidden;
      }
  .descript-sec{
    width: 100%;
-   height: 1.2rem;
+   height: 0.6rem;
    background-color: white;
    margin-top: 0.12rem;
    border-radius: 0.2rem;
@@ -515,9 +644,8 @@ overflow: hidden;
       margin-top: 0.2rem;
       height: 1rem;
          img{
-           width: 0.72rem;
+           width: 0.9rem;
            height: 1rem;
-           border: 1px solid;
            float: left;
          }
          .quanxin{
@@ -539,7 +667,7 @@ overflow: hidden;
     }
       .d-content-color{
         margin-top: 0.2rem;
-        height: 1.4rem;
+        height: auto;
         p{
           font-size: 0.13rem;
           font-weight: bold;
@@ -561,10 +689,21 @@ overflow: hidden;
            .color-li:nth-child(4){
              margin-right: 0;
            }
+          .active{
+            background: #FD9828;
+          }
         }
       }
+      .d-content-color::after{
+              content:" ";
+              display:block;
+              clear:both;
+              height:0; 
+              overflow:hidden; visibility:hidden; 
+      }
       .d-content-spec{
-        height: 0.9rem;
+       height: auto;
+       margin-top: 0.15rem;
          p{
           font-size: 0.13rem;
           font-weight: bold;
@@ -574,19 +713,31 @@ overflow: hidden;
               float: left;
               background: #F5F6FA;
               color: #2F3031;
-              height: 0.31rem;
+             
               line-height: 0.31rem;
               padding-left: 0.24rem;
               padding-right: 0.24rem;
               border-radius: 0.155rem;
               font-size: 0.13rem;
-              margin-right: 0.15rem;
+              margin-left: 0.1rem;
               margin-top: 0.15rem;
           }
+          .activeSize{
+            background: #FD9828;
+          }
+          
         }
+      }
+      .d-content-spec::after{
+              content:" ";
+              display:block;
+              clear:both;
+              height:0; 
+              overflow:hidden; visibility:hidden; 
       }
       .d-content-day{
         height: 0.9rem;
+        margin-top: 0.15rem;
          p{
           font-size: 0.13rem;
           font-weight: bold;
@@ -602,8 +753,12 @@ overflow: hidden;
               padding-right: 0.24rem;
               border-radius: 0.155rem;
               font-size: 0.13rem;
+              margin-left: 0.1rem;
               margin-right: 0.15rem;
               margin-top: 0.15rem;
+          }
+          .active{
+             background: #FD9828;
           }
         }
       }

@@ -1,7 +1,7 @@
 <template>
     <!-- <div id="photo"> -->
-        <div>
-        <img :src="touxiang" alt="上传头像" @click="uploadImg"  class="userImg" ref="touxiang">
+        <div class="tx-img">
+        <img :src="touxiang" alt="" @click="uploadImg"  class="userImg" ref="touxiang">
         <input @change="shangchuan" type="file" ref="upload" accept="image/*" class="hiddenInput">
         
     </div>
@@ -49,7 +49,6 @@ export default {
             // 表单  Form    name 
             let data = new FormData() ;  // 新建 表单对象  
            
-           
             data.append('file',file);
             console.log(data)
             // isPicFile(file)
@@ -58,14 +57,25 @@ export default {
             //     file: file,
             // }
             this.$axios({
-                url:"http://192.168.0.18:8080/wx/user/uploadAvatar",
+                url:"/user/uploadAvatar",
                 method:"POST",
                 data:data,
                 // contentType:false,
                 // processData:false,
             }).then(res=>{
-                //  this.touxiang = res.data.pic.replace(/public/,'');   // 配置代理 
+                //  this.touxiang =res.data.data.avatarUrl;   // 配置代理 
                 console.log(res);
+                this.$axios.post("/user/info").then(res=>{
+            console.log(res.data.data.avatarUrl)
+                  if(res.data.data.avatarUrl){
+                      console.log(res.data.data.avatarUrl)
+                      this.touxiang = res.data.data.avatarUrl;
+                    //   this.$refs.touxiang.src= "http://192.168.0.18:8080/zubei/users/img/9a0be563-2daf-4391-b2a3-27485e251849.jpg";
+                      console.log(this.touxiang);
+                  }else{
+                      this.touxiang = require("@/assets/image/touxiang.jpg");
+                  }
+            })
                 // this.touxiang = res.data.pic.replace(/public/,'http://192.168.0.24:8080');  //不需要配置代理 
                 // localStorage.avatar = this.touxiang;
             })
@@ -81,35 +91,18 @@ export default {
         //     // 使用默认 
         //     this.touxiang = require("@/assets/images/img4.jpg");
         // }
-        this.$axios.post("http://192.168.0.18:8080/wx/user/info").then(res=>{
+        this.$axios.post("/user/info").then(res=>{
             console.log(res.data.data.avatarUrl)
                   if(res.data.data.avatarUrl){
-                      this.touxiang = "http://192.168.0.18:8080/zubei/users/img/9a0be563-2daf-4391-b2a3-27485e251849.jpg";
+                      console.log(res.data.data.avatarUrl)
+                      this.touxiang = res.data.data.avatarUrl;
                     //   this.$refs.touxiang.src= "http://192.168.0.18:8080/zubei/users/img/9a0be563-2daf-4391-b2a3-27485e251849.jpg";
                       console.log(this.touxiang);
                   }else{
                       this.touxiang = require("@/assets/image/touxiang.jpg");
                   }
             })
-        //  let username = "";
-        // if(sessionStorage.username){
-        //     username = sessionStorage.username;
-        // }
-        // if(username){
-        //     this.$axios.post("/vue/getAvatar",{
-        //         username
-        //     }).then(res=>{
-        //           if(!!res.data.type){
-        //             //   this.touxiang = res.data.avatar.replace(/public/,'http://182.92.4.245:1906');
-                    
-        //               console.log(this.touxiang);
-        //           }else{
-        //               this.touxiang = require("@/assets/image/touxiang.jpg");
-        //           }
-        //     })
-        // }else{
-        //     this.touxiang = require("@/assets/image/touxiang.jpg");
-        // }
+        
     }
 }
 </script>
@@ -119,11 +112,11 @@ export default {
     height: 2rem;
 } */
 .userImg{
-     float: left;
-     width: 0.8rem;
-     height: 0.8rem;
+     width: 0.54rem;
+     height: 0.54rem;
      border-radius: 50%;
-     background: grey;
+     float: right;
+     margin-right: 0.12rem;
  }
 .touxiang{
     width:0.8rem;

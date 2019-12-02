@@ -13,13 +13,14 @@
                <div class="consume">
                   
      <div v-if="isLogin" class="login">
-           <Uploadavatar :username="isLogin"/>
-          <!-- <img src="" alt="" class="userImg" > -->
+           <!-- <Uploadavatar :username="isLogin"/> -->
+          <img :src="userinfo.avatarUrl" alt="" class="userImg" >
           <div class="login-right">
-                <p class="userName">大魔王的小怪兽</p>
-                <img src="../assets/image/mine_kthuiyuan.png" class="clubber" alt="">
-               
+                <p class="userName">{{userinfo.nickName}}</p>
+                <img src="../assets/image/mine_kthuiyuan.png" class="clubber" alt="" @click="toVipMember">
+                <router-link to="personaldata">
                 <img src="../assets/image/more.png" class="more" alt="">
+                </router-link>
           </div>
 
            
@@ -28,7 +29,7 @@
            <!-- <Uploadavatar :username="isLogin"/> -->
             <p class="newfriend">HI，新朋友</p>
             <p class="sp">立即登录，享受更多服务</p>
-            <button class="login">登录</button>
+            <button class="login" @click="gotoLogin">登录</button>
             
        </div>
        <div class="some-fun">
@@ -57,7 +58,7 @@
            <p class="vipdiv-title">VIP权益卡</p>
            <p class="vipdiv-save">花0.85/每天，预计省<span :style="{color:'#95862D'}">2500</span> /每年</p>
        </div>
-       <button class="vipdiv-right">点击抢购</button>
+       <button class="vipdiv-right" @click="openVip">点击抢购</button>
       </div>
                </div>
       </div>
@@ -76,20 +77,28 @@
                      </router-link>
                </div>
                <ul>
-                   <li>
+                   <li> 
+                       <router-link :to="{name:'myorder',params:{active:1}}">
                        <img src="../assets/image/mine_daifukuan.png" alt="">
+                       </router-link>
                        <p>待付款</p>
                    </li>
                      <li>
+                        <router-link :to="{name:'myorder',params:{active:2}}">
                        <img src="../assets/image/mine_daifahuo.png" alt="">
-                       <p>待发货</p>
+                        </router-link>
+                       <p>租用中</p>
                    </li>
                      <li>
+                         <router-link :to="{name:'myorder',params:{active:3}}">
                        <img src="../assets/image/mine_daishouhuo.png" alt="">
-                       <p>待收货</p>
+                        </router-link>
+                       <p>待结算</p>
                    </li>
                      <li>
+                    <router-link :to="{name:'myorder',params:{active:4}}">
                        <img src="../assets/image/mine_yiwancheng.png" alt="">
+                     </router-link>
                        <p>已完成</p>
                    </li>
                </ul>
@@ -156,7 +165,8 @@ import Uploadavatar from "@/components/Uploadavatar.vue";
 export default {
     data(){
         return{
-            isLogin:true,
+            isLogin:false,
+            userinfo:[],
             username:"",
         }
     },
@@ -165,14 +175,19 @@ export default {
      Uploadavatar,
     },
     methods: {
-        
+        openVip(){
+          this.$router.push({name:'vipmember'})
+        },
         gotoLogin(){
             this.$router.push({name:'login'})
         },
         leave(){
             sessionStorage.removeItem('username') 
             this.isLogin=false
-        } 
+        },
+        toVipMember(){
+            this.$router.push({name: 'vipmember'})
+        }
     },
       computed: {
           ...mapState(['searchShow'])
@@ -183,17 +198,20 @@ export default {
     },
     mounted() {
         // var username=sessionStorage.username;
-        // if(username){
-        //     this.isLogin=true;
-        //     this.username=username
-        // };
+        if(localStorage.token){
+            this.isLogin=true;
+          
+        };
        
-        this.$axios.post("http://192.168.0.18:8080/wx/user/info").then(res=>{
+        this.$axios.post("/user/info").then(res=>{
             console.log(res)
+            this.userinfo=res.data.data;
+            localStorage.info=JSON.stringify({"avatar":this.userinfo.avatarUrl,"username":this.userinfo.nickName});
+            console.log(this.userinfo)
         })
          
     },
-  
+
 }
 
 </script>
@@ -506,7 +524,6 @@ margin-top: 0.2rem;
      width: 0.8rem;
      height: 0.8rem;
      border-radius: 50%;
-     background: grey;
  }
  .login .login-right{
      float: left;
@@ -518,6 +535,7 @@ margin-top: 0.2rem;
      font-size: 0.23rem;
      font-weight: 610;
      margin-top: 0.15rem;
+     height: 0.3rem;
  }
  .login .login-right .clubber{
   width: 0.88rem;

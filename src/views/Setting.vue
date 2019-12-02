@@ -16,9 +16,12 @@
              <span class="hy-level">1.1.0</span>
        </div>
         <div class="loginOut">
-             <p class="loginOut-title">退出登录</p>
+             <p class="loginOut-title" @click="loginOut">退出登录</p>
              <img src="../assets/image/more.png" class="more" alt="">
             
+       </div>
+       <div v-for="(item,i) in array" :key="i">
+                {{item}}
        </div>
     </div>
 </template>
@@ -30,7 +33,7 @@ import Head from '@/components/Head.vue'
 export default {
     data() {
         return {
-            
+            array:['小明','xiaohong','xiaofang']
         }
     },
     components:{
@@ -44,6 +47,10 @@ export default {
     },
     methods: {
         ...mapMutations(['changeSearch']),
+        loginOut(){
+             localStorage.removeItem('token');
+             this.$router.push('login')
+        }
     },
 }
 </script>

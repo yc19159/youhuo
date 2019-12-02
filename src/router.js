@@ -3,9 +3,6 @@ import VueRouter from 'vue-router'
 import Home from './views/Home.vue'
 import Search from './views/Search.vue'
 
-
-
-
 Vue.use(VueRouter)
 
 export default new VueRouter({
@@ -19,7 +16,7 @@ export default new VueRouter({
     {
       path: '/search/:typeId',
       name: 'search',
-      component: Search
+      component: Search,
     },
     {
       path: '/login',
@@ -37,7 +34,7 @@ export default new VueRouter({
       component: ()=> import('./views/Mine.vue')
     },
     {
-      path: '/list/:active?',
+      path: '/list',
       name: 'list',
       component: ()=> import('./views/Alllist.vue')
     },
@@ -53,12 +50,12 @@ export default new VueRouter({
       component: ()=> import('./views/Postal.vue')
     },
     {
-      path: '/jiesuan',
+      path: '/jiesuan/:goodId',
       name: 'jiesuan',
       component: ()=> import('./views/Jiesuan.vue'),
     },
     {
-      path: '/waitforpay',
+      path: '/waitforpay/:orderId',
       name: 'waitforpay',
       component: ()=> import('./views/WaitForPay.vue'),
     },
@@ -68,9 +65,14 @@ export default new VueRouter({
       component: ()=> import('./views/PaySuccess.vue'),
     },
     {
-      path: '/myorder',
+      path: '/myorder/:active?',
       name: 'myorder',
       component: ()=> import('./views/MyOrder.vue'),
+    },
+    {
+      path: '/orderdetail/:orderId',
+      name: 'orderdetail',
+      component: ()=> import('./views/OrderDetail.vue'),
     },
     {
       path: '/givewarm',
@@ -82,11 +84,11 @@ export default new VueRouter({
       name: 'givewarmdetail',
       component: ()=> import('./views/GiveWarmDetail.vue'),
     },
-    // {
-    //   path: '/addressedit',
-    //   name: 'addressedit',
-    //   component: ()=> import('@/views/Addressedit.vue'),
-    // },
+    {
+      path: '/addressedit',
+      name: 'addressedit',
+      component: ()=> import('@/views/Addressedit.vue'),
+    },
     {
      path: '/personaldata',
       name: 'personaldata',
@@ -98,7 +100,7 @@ export default new VueRouter({
       component: ()=>import('@/views/Setting'),
     },
     {
-      path: '/resetpwd',redirect:"/resetpwd",
+      path: '/resetpwd',
       name: 'resetpwd',
       component: ()=>import('@/views/ResetPwd'),
     },{
@@ -117,7 +119,7 @@ export default new VueRouter({
       component: ()=> import('@/views/AddressManage.vue'),
     },
     {
-      path: '/dianpu',
+      path: '/dianpu/:shopId',
       name: 'dianpu',
       component: ()=> import('@/views/Dianpu.vue'),
     },
@@ -126,6 +128,21 @@ export default new VueRouter({
       name: 'vipmember',
       component: ()=> import('@/views/VipMember.vue'),
     },
-    
+    {
+      path: '/dindan/:orderId',
+      name: 'dindan',
+      component: ()=> import('@/views/Dindan.vue'),
+    },
+    {
+      path: '/return/:orderId',
+      name: 'return',
+      component: ()=> import('@/views/Return.vue'),
+    },
+      {
+        path: '/comment/:goodId',
+        name: 'comment',
+        component: ()=> import('@/views/Comment.vue'),
+      },
+
   ]
 })

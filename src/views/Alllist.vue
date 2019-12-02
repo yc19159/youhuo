@@ -2,71 +2,51 @@
     <div>
         <Head ></Head>
       <div class="content">
-         <el-tabs :tab-position="tabPosition" style="height: 200px;">
-    <el-tab-pane label="超值套餐">
+         <el-tabs :tab-position="tabPosition" v-model="activeName" style="height: 200px;">
+    <el-tab-pane label="超值套餐" name="超值套餐">
       <ul class="listUl">
-        <li > <router-link  to="good/123"><p></p></router-link>
-        <span class="phoneType">苹果</span></li>
-
-      <li><p></p>
-        <span class="phoneType">苹果</span></li>
-      <li><p></p>
-        <span class="phoneType">苹果</span></li>
-      <li><p></p>
-        <span class="phoneType">苹果</span></li>
-      <li><p></p>
-        <span class="phoneType">苹果</span></li>
-      <li><p></p>
-        <span class="phoneType">苹果</span></li> 
-      <li><p></p>
-        <span class="phoneType">苹果</span></li>
-      <li><p></p>
-        <span class="phoneType">苹果</span></li>
-      <li><p></p>
-        <span class="phoneType">苹果</span></li>
-      <li><p></p>
-        <span class="phoneType">苹果</span></li>
-      <li><p></p>
-        <span class="phoneType">苹果</span></li>
-      <li><p></p>
-        <span class="phoneType">苹果</span></li></ul>
-      </el-tab-pane>
-    <el-tab-pane label="智能手机">
-      <ul class="listUl">
-         <li ><p></p>
-        <span class="phoneType">苹果</span></li>
-      </ul></el-tab-pane>
-    <el-tab-pane label="电脑/平板"><ul class="listUl">
-         <li ><p></p>
-        <span class="phoneType">苹果</span></li>
-      </ul></el-tab-pane>
-    <el-tab-pane label="摄影航拍"><ul class="listUl">
-         <li ><p></p>
-        <span class="phoneType">苹果</span></li>
-      </ul></el-tab-pane>
-    <el-tab-pane label="游戏设备"><ul class="listUl">
-         <li ><p></p>
-        <span class="phoneType">苹果</span></li>
-      </ul></el-tab-pane>
-    <el-tab-pane label="家居家电" class="jiadian">
-      <ul class="listUl" v-for="(item , i) in list" :key="i">
-         <li ><p>  <router-link
+         <li  v-for="(item , i) in firstList" :key="i">
+           <p><router-link
             :to="{name:'search',params:{typeId:item.id}}"> <img :src="item.iconUrl" alt="" class="jiadianImg"> 
             </router-link></p>
         <span class="phoneType">{{item.name}}</span></li>
-      </ul></el-tab-pane>
-    <el-tab-pane label="办公设备"><ul class="listUl">
+        </ul>
+      </el-tab-pane>
+    <el-tab-pane label="智能手机" name="智能手机">
+      <ul class="listUl">
          <li ><p></p>
         <span class="phoneType">苹果</span></li>
       </ul></el-tab-pane>
-    <el-tab-pane label="旅游户外"><ul class="listUl">
+    <el-tab-pane label="电脑/平板" name="电脑/平板"><ul class="listUl">
          <li ><p></p>
         <span class="phoneType">苹果</span></li>
       </ul></el-tab-pane>
-    <el-tab-pane label="商家服务"><ul class="listUl">
+    <el-tab-pane label="摄影航拍" name="摄影航拍"><ul class="listUl">
+         <li ><p></p>
+        <span class="phoneType" >苹果</span></li>
+      </ul></el-tab-pane>
+    <el-tab-pane label="游戏设备" name="游戏设备"><ul class="listUl">
+         <li ><p></p>
+        <span class="phoneType" >苹果</span></li>
+      </ul></el-tab-pane>
+    <el-tab-pane label="家居家电" name="家居家电" class="jiadian">
+      <ul class="listUl">
+         <li  v-for="(item , i) in list" :key="i">
+            <router-link :to="{name:'search',params:{typeId:item.id}}">  
+             <p><img :src="item.iconUrl" alt="" class="jiadianImg"> </p>
+            </router-link>
+            <span class="phoneType">{{item.name}}</span>
+        </li>
+      </ul></el-tab-pane>
+    <el-tab-pane label="办公设备" name="办公设备"><ul class="listUl">
          <li ><p></p>
         <span class="phoneType">苹果</span></li>
       </ul></el-tab-pane>
+    <el-tab-pane label="旅游户外" name="旅游户外"><ul class="listUl">
+         <li ><p></p>
+        <span class="phoneType">苹果</span></li>
+      </ul></el-tab-pane>
+
   </el-tabs>
       </div>
      
@@ -79,9 +59,17 @@ import Head from "@/components/Head.vue"
 export default {
       data() {
     return {
-      // active: 2
+      activeName:"超值套餐",
+      active: 2,
       tabPosition: 'left',
-      list: [],
+      firstList: [],
+      secondList: [],
+      thirdList: [],
+      fouthList: [],
+      fifthList: [],
+      sixthList: [],
+      seventhList: [],
+      eighthList: [],
     };
   },
   components:{
@@ -108,19 +96,14 @@ export default {
   },
   mounted() {
      this.changeSearch(true);
-    //  this.changeActive(this.$route.params.active)
-    // alert(this.$route.params.active)
-    
-    //  this.active=this.$route.params.active;
-     console.log(this.active)
-      // alert(this.actice)
-      this.$axios.get("http://192.168.0.17:8080/wx/goods/category",{
+    console.log(this.active)
+      this.$axios.get("/goods/category",{
         params:{
           id:"1005000",
         }
       }).then(res=>{
-        this.list=res.data.data.brotherCategory
-        console.log(this.list)
+        this.firstList=res.data.data.brotherCategory
+        console.log(this.firstList)
       })
      
   },
